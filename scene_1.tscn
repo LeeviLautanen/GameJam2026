@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://djos3kt7quw2v"]
 
+[ext_resource type="Script" uid="uid://b21c5g2x6ks14" path="res://test.cs" id="1_3sd7o"]
+
 [node name="scene_1" type="Node2D" unique_id=1252822935]
+script = ExtResource("1_3sd7o")
 
 [node name="Label" type="Label" parent="." unique_id=246332121]
 offset_right = 40.0
