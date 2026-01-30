@@ -1,11 +1,40 @@
 [gd_scene format=3 uid="uid://djos3kt7quw2v"]
 
-[ext_resource type="Script" uid="uid://b21c5g2x6ks14" path="res://test.cs" id="1_3sd7o"]
+[ext_resource type="Texture2D" uid="uid://l58pilahwhrx" path="res://Art/Placeholder/Base.PNG" id="1_kl852"]
+[ext_resource type="Texture2D" uid="uid://bt53wb18qgea8" path="res://Art/Placeholder/Ears.PNG" id="2_4nmru"]
+[ext_resource type="Texture2D" uid="uid://bu02v78y4486q" path="res://Art/Placeholder/Eyes.PNG" id="3_05u5g"]
+[ext_resource type="Texture2D" uid="uid://capfqskpnwksn" path="res://Art/Placeholder/Mouth.PNG" id="4_cr3cd"]
+[ext_resource type="Texture2D" uid="uid://bc8cho3j4lasj" path="res://Art/Placeholder/Nose.PNG" id="5_mjd5i"]
 
-[node name="scene_1" type="Node2D" unique_id=1252822935]
-script = ExtResource("1_3sd7o")
+[node name="Scene1" type="Node2D" unique_id=1252822935]
 
-[node name="Label" type="Label" parent="." unique_id=246332121]
+[node name="Base" type="Sprite2D" parent="." unique_id=1641066384]
+texture_filter = 1
+position = Vector2(510.00006, 306.00003)
+scale = Vector2(3.415, 3.415)
+texture = ExtResource("1_kl852")
+
+[node name="Ears" type="Sprite2D" parent="Base" unique_id=2054170775]
+texture = ExtResource("2_4nmru")
+
+[node name="Eyes" type="Sprite2D" parent="Base" unique_id=1238309491]
+texture = ExtResource("3_05u5g")
+
+[node name="Mouth" type="Sprite2D" parent="Base" unique_id=2000915286]
+texture = ExtResource("4_cr3cd")
+
+[node name="Nose" type="Sprite2D" parent="Base" unique_id=1408035836]
+texture = ExtResource("5_mjd5i")
+
+[node name="Control" type="Control" parent="." unique_id=1959831784]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
-offset_bottom = 23.0
-text = "Hello world"
+offset_bottom = 40.0
+
+[node name="MenuBar" type="MenuBar" parent="Control" unique_id=904388708]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PopupMenu" type="PopupMenu" parent="Control/MenuBar" unique_id=364449314]
