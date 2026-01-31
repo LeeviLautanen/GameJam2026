@@ -7,7 +7,34 @@
 [ext_resource type="Texture2D" uid="uid://b8werx8htkc7v" path="res://Art/halfMasks/half_mask_type_1/feathers blue/half_mask_base_blue_feathers.png" id="4_wwdpc"]
 [ext_resource type="Texture2D" uid="uid://c5em27h2xfico" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_blue_gem.png" id="5_6faey"]
 [ext_resource type="Script" uid="uid://bi6f3qds5qlhr" path="res://Scripts/MaskDetail.cs" id="5_nc7oo"]
+[ext_resource type="Texture2D" uid="uid://36vekan57p1j" path="res://Art/halfMasks/half_mask_type_1/bottom/half_mask_base_beak_2.png" id="6_7astt"]
+[ext_resource type="Texture2D" uid="uid://ceo6268tqbcrj" path="res://Art/halfMasks/half_mask_type_1/bottom/half_mask_base_beak_3.png" id="7_fmt3s"]
+[ext_resource type="Texture2D" uid="uid://cmstlbldvwqv4" path="res://Art/halfMasks/half_mask_type_1/bottom/half_mask_base_beak_4.png" id="8_c8kak"]
 [ext_resource type="Texture2D" uid="uid://cg380ku3tguwp" path="res://Art/halfMasks/half_mask_type_1/bottom/half_mask_base_beak_1.png" id="8_nc7oo"]
+[ext_resource type="Texture2D" uid="uid://c6wgcsn1ijugq" path="res://Art/halfMasks/half_mask_type_1/bottom/half_mask_base_beak_5.png" id="9_d8gnr"]
+[ext_resource type="Texture2D" uid="uid://qts8vu3blwvs" path="res://Art/halfMasks/half_mask_type_1/bottom/half_mask_base_beak_6.png" id="10_ytr4e"]
+[ext_resource type="Texture2D" uid="uid://b2d4bfs132jxo" path="res://Art/halfMasks/half_mask_type_1/details blue/half_mask_base_blue_details_variation.png" id="12_e7r37"]
+[ext_resource type="Texture2D" uid="uid://0trufdyfmyir" path="res://Art/halfMasks/half_mask_type_1/details blue/half_mask_base_blue_details_variation_2.png" id="13_gme1u"]
+[ext_resource type="Texture2D" uid="uid://t1u3ldc1q1sa" path="res://Art/halfMasks/half_mask_type_1/details blue/half_mask_base_pattern_2.png" id="14_ae8kp"]
+[ext_resource type="Texture2D" uid="uid://56rhd4h5tosh" path="res://Art/halfMasks/half_mask_type_1/details blue/half_mask_base_pattern_3.png" id="15_apgbi"]
+[ext_resource type="Texture2D" uid="uid://bg2ydrwooleuw" path="res://Art/halfMasks/half_mask_type_1/details blue/half_mask_base_pattern_4.png" id="16_f7eu1"]
+[ext_resource type="Texture2D" uid="uid://d3nxn6klj3p5x" path="res://Art/halfMasks/half_mask_type_1/feathers blue/half_mask_base_blue_feathers_shorter.png" id="18_j286a"]
+[ext_resource type="Texture2D" uid="uid://cyu6olwfkl10" path="res://Art/halfMasks/half_mask_type_1/feathers blue/half_mask_base_blue_feathers_wrong_colors.png" id="19_fi16w"]
+[ext_resource type="Texture2D" uid="uid://bge15nmy8nye2" path="res://Art/halfMasks/half_mask_type_1/feathers blue/half_mask_base_blue_feather_left.png" id="20_vho2s"]
+[ext_resource type="Texture2D" uid="uid://bo63xpsi545qr" path="res://Art/halfMasks/half_mask_type_1/feathers blue/half_mask_base_blue_feather_middle.png" id="21_annok"]
+[ext_resource type="Texture2D" uid="uid://cw67qmtukcigs" path="res://Art/halfMasks/half_mask_type_1/feathers blue/half_mask_base_blue_feather_right.png" id="22_hg0l0"]
+[ext_resource type="Texture2D" uid="uid://c55lnvtxfjg1k" path="res://Art/halfMasks/half_mask_type_1/feathers blue/half_mask_base_blue_purple_feathers.png" id="23_q3blq"]
+[ext_resource type="Texture2D" uid="uid://d11sbo5mrix8k" path="res://Art/halfMasks/half_mask_type_1/feathers pink/half_mask_base_pink_feathers.png" id="24_16k7p"]
+[ext_resource type="Texture2D" uid="uid://crje84x4p5c0w" path="res://Art/halfMasks/half_mask_type_1/feathers pink/half_mask_base_pink_feather_left.png" id="25_kkqk6"]
+[ext_resource type="Texture2D" uid="uid://do2wy5ny4xgt1" path="res://Art/halfMasks/half_mask_type_1/feathers pink/half_mask_base_pink_feather_middle.png" id="26_d1oeb"]
+[ext_resource type="Texture2D" uid="uid://cxd80yffk4qmf" path="res://Art/halfMasks/half_mask_type_1/feathers pink/half_mask_base_pink_feather_right.png" id="27_j14yx"]
+[ext_resource type="Texture2D" uid="uid://dssst74f2h7nx" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_blue_gems.png" id="29_u12cy"]
+[ext_resource type="Texture2D" uid="uid://dques3yjschqw" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_gems_aqua.png" id="30_63mpe"]
+[ext_resource type="Texture2D" uid="uid://nwlj3y5qjqms" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_gems_aqua_2.png" id="31_gmppw"]
+[ext_resource type="Texture2D" uid="uid://d11fnvsrlvesp" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_gem_3.png" id="32_l0rr1"]
+[ext_resource type="Texture2D" uid="uid://b8731b6u7q0ni" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_gem_aqua_2.png" id="33_acg8c"]
+[ext_resource type="Texture2D" uid="uid://caogppfdqpvf7" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_pink_gem.png" id="34_ckv4c"]
+[ext_resource type="Texture2D" uid="uid://brn8vnyk0efqj" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_pink_gems.png" id="35_spmjc"]
 
 [node name="Level2" type="Node2D" unique_id=930230761]
 
@@ -42,17 +69,26 @@ position = Vector2(315, 296)
 texture = ExtResource("2_psxy2")
 script = ExtResource("3_wwdpc")
 
+[node name="HalfMaskBaseBeak1" type="Sprite2D" parent="HalfMaskBaseBlue" unique_id=1738416225]
+texture = ExtResource("8_nc7oo")
+script = ExtResource("5_nc7oo")
+DetailName = "Beaks"
+Textures = Array[Texture2D]([ExtResource("8_nc7oo"), ExtResource("6_7astt"), ExtResource("7_fmt3s"), ExtResource("8_c8kak"), ExtResource("9_d8gnr"), ExtResource("10_ytr4e")])
+
 [node name="HalfMaskBaseBluePattern" type="Sprite2D" parent="HalfMaskBaseBlue" unique_id=2107466530]
 texture = ExtResource("3_psxy2")
 script = ExtResource("5_nc7oo")
+DetailName = "Patterns"
+Textures = Array[Texture2D]([ExtResource("3_psxy2"), ExtResource("12_e7r37"), ExtResource("13_gme1u"), ExtResource("14_ae8kp"), ExtResource("15_apgbi"), ExtResource("16_f7eu1")])
 
 [node name="HalfMaskBaseBlueFeathers" type="Sprite2D" parent="HalfMaskBaseBlue" unique_id=1854539873]
 texture = ExtResource("4_wwdpc")
 script = ExtResource("5_nc7oo")
+DetailName = "Feathers"
+Textures = Array[Texture2D]([ExtResource("4_wwdpc"), ExtResource("18_j286a"), ExtResource("19_fi16w"), ExtResource("20_vho2s"), ExtResource("21_annok"), ExtResource("22_hg0l0"), ExtResource("23_q3blq"), ExtResource("24_16k7p"), ExtResource("25_kkqk6"), ExtResource("26_d1oeb"), ExtResource("27_j14yx")])
 
 [node name="HalfMaskBaseBlueGem" type="Sprite2D" parent="HalfMaskBaseBlue" unique_id=1720410781]
 texture = ExtResource("5_6faey")
 script = ExtResource("5_nc7oo")
-
-[node name="HalfMaskBaseBeak1" type="Sprite2D" parent="HalfMaskBaseBlue/HalfMaskBaseBlueGem" unique_id=1738416225]
-texture = ExtResource("8_nc7oo")
+DetailName = "Gems"
+Textures = Array[Texture2D]([ExtResource("5_6faey"), ExtResource("29_u12cy"), ExtResource("30_63mpe"), ExtResource("31_gmppw"), ExtResource("32_l0rr1"), ExtResource("33_acg8c"), ExtResource("34_ckv4c"), ExtResource("35_spmjc")])
