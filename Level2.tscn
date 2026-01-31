@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://djl160yyngc3v" path="res://Scripts/LevelManager.cs" id="1_fmt3s"]
 [ext_resource type="Texture2D" uid="uid://c6pigv7j5cn8s" path="res://Art/halfMasks/half_mask_type_1/base/half_mask_base_blue.png" id="2_psxy2"]
 [ext_resource type="PackedScene" uid="uid://5dtgpw4gym5p" path="res://GuestScene.tscn" id="3_c8kak"]
+[ext_resource type="Texture2D" uid="uid://c5x614j5ff0ud" path="res://Art/ui/clipboard_with_more_details.png" id="3_hg0l0"]
 [ext_resource type="Texture2D" uid="uid://b0rx6t8f3it3p" path="res://Art/halfMasks/half_mask_type_1/details blue/half_mask_base_blue_details.png" id="3_psxy2"]
 [ext_resource type="Script" uid="uid://l0hcpvo2pnlb" path="res://Scripts/MaskManager.cs" id="3_wwdpc"]
 [ext_resource type="Texture2D" uid="uid://ba2qru0rhr8qx" path="res://Art/ui/submit_button.png" id="4_e7r37"]
@@ -25,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://qts8vu3blwvs" path="res://Art/halfMasks/half_mask_type_1/bottom/half_mask_base_beak_6.png" id="10_ytr4e"]
 [ext_resource type="Texture2D" uid="uid://iqosr2cfexa" path="res://Art/ui/check_box_frames/check_box_frame_0006.png" id="11_gmppw"]
 [ext_resource type="Texture2D" uid="uid://b2d4bfs132jxo" path="res://Art/halfMasks/half_mask_type_1/details blue/half_mask_base_blue_details_variation.png" id="12_e7r37"]
+[ext_resource type="Texture2D" uid="uid://do2vglcnyhnp8" path="res://Art/ui/hand_for_clipboard.png" id="12_q3blq"]
 [ext_resource type="Texture2D" uid="uid://0trufdyfmyir" path="res://Art/halfMasks/half_mask_type_1/details blue/half_mask_base_blue_details_variation_2.png" id="13_gme1u"]
 [ext_resource type="Texture2D" uid="uid://t1u3ldc1q1sa" path="res://Art/halfMasks/half_mask_type_1/details blue/half_mask_base_pattern_2.png" id="14_ae8kp"]
 [ext_resource type="Texture2D" uid="uid://56rhd4h5tosh" path="res://Art/halfMasks/half_mask_type_1/details blue/half_mask_base_pattern_3.png" id="15_apgbi"]
@@ -46,7 +48,6 @@
 [ext_resource type="Texture2D" uid="uid://b8731b6u7q0ni" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_gem_aqua_2.png" id="33_acg8c"]
 [ext_resource type="Texture2D" uid="uid://caogppfdqpvf7" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_pink_gem.png" id="34_ckv4c"]
 [ext_resource type="Texture2D" uid="uid://brn8vnyk0efqj" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_pink_gems.png" id="35_spmjc"]
-[ext_resource type="Texture2D" uid="uid://cvx5jy4yny6ag" path="res://Art/ui/clipboard_with_hand.png" id="38_d8gnr"]
 [ext_resource type="Script" uid="uid://b7ksbw1l0vg8g" path="res://Scripts/CameraController.cs" id="39_ytr4e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f7eu1"]
@@ -92,9 +93,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ClipboardWithHand" type="Sprite2D" parent="Control" unique_id=772532831]
 texture_filter = 1
-position = Vector2(290, 984.00006)
+position = Vector2(595, 975.99994)
 scale = Vector2(2.8, 2.8)
-texture = ExtResource("38_d8gnr")
+texture = ExtResource("3_hg0l0")
 
 [node name="AnimatedCheckBox" type="AnimatedSprite2D" parent="Control/ClipboardWithHand" unique_id=739851498]
 position = Vector2(15.35714, 53.928555)
@@ -105,10 +106,10 @@ autoplay = "fill"
 
 [node name="Label" type="Label" parent="Control/ClipboardWithHand" unique_id=455611803]
 texture_filter = 1
-offset_left = 21.999989
-offset_top = -83.00001
-offset_right = 157.99998
-offset_bottom = -60.000008
+offset_left = -83.21429
+offset_top = -92.49998
+offset_right = 52.785713
+offset_bottom = -69.49998
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Reference mask"
 uppercase = true
@@ -121,6 +122,10 @@ offset_right = 197.66666
 offset_bottom = 118.999985
 icon = ExtResource("4_gme1u")
 flat = true
+
+[node name="HandForClipboard" type="Sprite2D" parent="Control/ClipboardWithHand" unique_id=110786292]
+position = Vector2(105.00001, -3.5714025)
+texture = ExtResource("12_q3blq")
 
 [node name="Submit" type="Button" parent="Control" unique_id=1902225099]
 texture_filter = 1
