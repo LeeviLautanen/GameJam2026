@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cqhnhsk8jq62f" path="res://Art/fullMasks/base/base_white.png" id="2_84iim"]
 [ext_resource type="Script" uid="uid://l0hcpvo2pnlb" path="res://Scripts/MaskManager.cs" id="4_545p4"]
 [ext_resource type="Texture2D" uid="uid://cvx5jy4yny6ag" path="res://Art/ui/clipboard_with_hand.png" id="4_m8l3s"]
+[ext_resource type="Texture2D" uid="uid://ba2qru0rhr8qx" path="res://Art/ui/submit_button.png" id="5_ej15d"]
 [ext_resource type="PackedScene" uid="uid://5dtgpw4gym5p" path="res://GuestScene.tscn" id="5_h8oof"]
+[ext_resource type="Texture2D" uid="uid://b4o8a748vhei4" path="res://Art/ui/clipboard_page_turn_button.png" id="5_h80re"]
 [ext_resource type="Texture2D" uid="uid://cps7hc2vkwp6m" path="res://Art/fullMasks/patterns/pattern_bubbles_all.png" id="6_h8oof"]
 [ext_resource type="Script" uid="uid://bi6f3qds5qlhr" path="res://Scripts/MaskDetail.cs" id="7_nqeel"]
 [ext_resource type="Texture2D" uid="uid://oofi75hkldyx" path="res://Art/fullMasks/patterns/pattern_bubbles_bottom.png" id="8_ayhma"]
@@ -69,6 +71,14 @@ position = Vector2(286, 1023.99994)
 scale = Vector2(3, 3.337)
 texture = ExtResource("4_m8l3s")
 
+[node name="TurnPage" type="Button" parent="Control/ClipboardWithHand" unique_id=1369884093]
+offset_left = 117.66667
+offset_top = 51.843006
+offset_right = 197.66667
+offset_bottom = 118.843
+icon = ExtResource("5_h80re")
+flat = true
+
 [node name="Label" type="Label" parent="Control/ClipboardWithHand" unique_id=809669143]
 texture_filter = 1
 offset_left = 21.454546
@@ -81,17 +91,23 @@ uppercase = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Submit" type="Button" parent="Control" unique_id=580956588]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -2.2030075
-anchor_top = 16.333334
-anchor_right = -2.2030075
-anchor_bottom = 16.333334
+anchor_left = -1.7894737
+anchor_top = 14.964912
+anchor_right = -2.1203008
+anchor_bottom = 15.157895
 offset_left = 964.0
 offset_top = 363.0
 offset_right = 1051.0
 offset_bottom = 394.0
-text = "Submit"
+scale = Vector2(2, 2)
+tooltip_text = "Submit 
+
+"
+icon = ExtResource("5_ej15d")
+flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="DifferenceList" type="VBoxContainer" parent="Control" unique_id=781527942]

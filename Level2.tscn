@@ -1,20 +1,29 @@
-[gd_scene format=3 uid="uid://dxobx03bhoc36"]
+[gd_scene format=3 uid="uid://40821jecs6kb"]
 
 [ext_resource type="Script" uid="uid://s8kvvq83dobk" path="res://Scripts/DifferenceList.cs" id="1_8mrap"]
 [ext_resource type="Script" uid="uid://djl160yyngc3v" path="res://Scripts/LevelManager.cs" id="1_fmt3s"]
 [ext_resource type="Texture2D" uid="uid://c6pigv7j5cn8s" path="res://Art/halfMasks/half_mask_type_1/base/half_mask_base_blue.png" id="2_psxy2"]
-[ext_resource type="PackedScene" path="res://GuestScene.tscn" id="3_c8kak"]
+[ext_resource type="PackedScene" uid="uid://5dtgpw4gym5p" path="res://GuestScene.tscn" id="3_c8kak"]
 [ext_resource type="Texture2D" uid="uid://b0rx6t8f3it3p" path="res://Art/halfMasks/half_mask_type_1/details blue/half_mask_base_blue_details.png" id="3_psxy2"]
 [ext_resource type="Script" uid="uid://l0hcpvo2pnlb" path="res://Scripts/MaskManager.cs" id="3_wwdpc"]
+[ext_resource type="Texture2D" uid="uid://ba2qru0rhr8qx" path="res://Art/ui/submit_button.png" id="4_e7r37"]
+[ext_resource type="Texture2D" uid="uid://b4o8a748vhei4" path="res://Art/ui/clipboard_page_turn_button.png" id="4_gme1u"]
 [ext_resource type="Texture2D" uid="uid://b8werx8htkc7v" path="res://Art/halfMasks/half_mask_type_1/feathers blue/half_mask_base_blue_feathers.png" id="4_wwdpc"]
 [ext_resource type="Texture2D" uid="uid://c5em27h2xfico" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_blue_gem.png" id="5_6faey"]
+[ext_resource type="Texture2D" uid="uid://cwhuayh3lf4oq" path="res://Art/ui/check_box_frames/check_box_frame_0000.png" id="5_16k7p"]
 [ext_resource type="Script" uid="uid://bi6f3qds5qlhr" path="res://Scripts/MaskDetail.cs" id="5_nc7oo"]
 [ext_resource type="Texture2D" uid="uid://36vekan57p1j" path="res://Art/halfMasks/half_mask_type_1/bottom/half_mask_base_beak_2.png" id="6_7astt"]
+[ext_resource type="Texture2D" uid="uid://6knuhkc6yf8v" path="res://Art/ui/check_box_frames/check_box_frame_0001.png" id="6_kkqk6"]
+[ext_resource type="Texture2D" uid="uid://dyd6bsdpi43u6" path="res://Art/ui/check_box_frames/check_box_frame_0002.png" id="7_d1oeb"]
 [ext_resource type="Texture2D" uid="uid://ceo6268tqbcrj" path="res://Art/halfMasks/half_mask_type_1/bottom/half_mask_base_beak_3.png" id="7_fmt3s"]
 [ext_resource type="Texture2D" uid="uid://cmstlbldvwqv4" path="res://Art/halfMasks/half_mask_type_1/bottom/half_mask_base_beak_4.png" id="8_c8kak"]
+[ext_resource type="Texture2D" uid="uid://vt28rs8ss6c6" path="res://Art/ui/check_box_frames/check_box_frame_0003.png" id="8_j14yx"]
 [ext_resource type="Texture2D" uid="uid://cg380ku3tguwp" path="res://Art/halfMasks/half_mask_type_1/bottom/half_mask_base_beak_1.png" id="8_nc7oo"]
 [ext_resource type="Texture2D" uid="uid://c6wgcsn1ijugq" path="res://Art/halfMasks/half_mask_type_1/bottom/half_mask_base_beak_5.png" id="9_d8gnr"]
+[ext_resource type="Texture2D" uid="uid://ck6v4ktq8f70e" path="res://Art/ui/check_box_frames/check_box_frame_0004.png" id="9_u12cy"]
+[ext_resource type="Texture2D" uid="uid://d2i4ceoq761qj" path="res://Art/ui/check_box_frames/check_box_frame_0005.png" id="10_63mpe"]
 [ext_resource type="Texture2D" uid="uid://qts8vu3blwvs" path="res://Art/halfMasks/half_mask_type_1/bottom/half_mask_base_beak_6.png" id="10_ytr4e"]
+[ext_resource type="Texture2D" uid="uid://iqosr2cfexa" path="res://Art/ui/check_box_frames/check_box_frame_0006.png" id="11_gmppw"]
 [ext_resource type="Texture2D" uid="uid://b2d4bfs132jxo" path="res://Art/halfMasks/half_mask_type_1/details blue/half_mask_base_blue_details_variation.png" id="12_e7r37"]
 [ext_resource type="Texture2D" uid="uid://0trufdyfmyir" path="res://Art/halfMasks/half_mask_type_1/details blue/half_mask_base_blue_details_variation_2.png" id="13_gme1u"]
 [ext_resource type="Texture2D" uid="uid://t1u3ldc1q1sa" path="res://Art/halfMasks/half_mask_type_1/details blue/half_mask_base_pattern_2.png" id="14_ae8kp"]
@@ -38,7 +47,36 @@
 [ext_resource type="Texture2D" uid="uid://caogppfdqpvf7" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_pink_gem.png" id="34_ckv4c"]
 [ext_resource type="Texture2D" uid="uid://brn8vnyk0efqj" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_pink_gems.png" id="35_spmjc"]
 [ext_resource type="Texture2D" uid="uid://cvx5jy4yny6ag" path="res://Art/ui/clipboard_with_hand.png" id="38_d8gnr"]
-[ext_resource type="Script" path="res://Scripts/CameraController.cs" id="39_ytr4e"]
+[ext_resource type="Script" uid="uid://b7ksbw1l0vg8g" path="res://Scripts/CameraController.cs" id="39_ytr4e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f7eu1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_16k7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kkqk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d1oeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_j14yx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_u12cy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_63mpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gmppw")
+}],
+"loop": false,
+"name": &"fill",
+"speed": 15.0
+}]
 
 [node name="Level2" type="Node2D" unique_id=930230761]
 script = ExtResource("1_fmt3s")
@@ -55,8 +93,15 @@ metadata/_edit_use_anchors_ = true
 [node name="ClipboardWithHand" type="Sprite2D" parent="Control" unique_id=772532831]
 texture_filter = 1
 position = Vector2(290, 984.00006)
-scale = Vector2(3, 3)
+scale = Vector2(2.8, 2.8)
 texture = ExtResource("38_d8gnr")
+
+[node name="AnimatedCheckBox" type="AnimatedSprite2D" parent="Control/ClipboardWithHand" unique_id=739851498]
+position = Vector2(15.35714, 53.928555)
+scale = Vector2(0.99999994, 0.99999994)
+sprite_frames = SubResource("SpriteFrames_f7eu1")
+animation = &"fill"
+autoplay = "fill"
 
 [node name="Label" type="Label" parent="Control/ClipboardWithHand" unique_id=455611803]
 texture_filter = 1
@@ -69,31 +114,46 @@ text = "Reference mask"
 uppercase = true
 metadata/_edit_use_anchors_ = true
 
+[node name="TurnPage" type="Button" parent="Control/ClipboardWithHand" unique_id=112183971]
+offset_left = 117.666664
+offset_top = 51.99998
+offset_right = 197.66666
+offset_bottom = 118.999985
+icon = ExtResource("4_gme1u")
+flat = true
+
 [node name="Submit" type="Button" parent="Control" unique_id=1902225099]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -1.9924812
-anchor_top = 14.754386
-anchor_right = -1.9924812
-anchor_bottom = 14.754386
+anchor_left = -3.0827067
+anchor_top = 13.719298
+anchor_right = -3.4210527
+anchor_bottom = 14.122807
 offset_left = 964.0
 offset_top = 363.0
 offset_right = 1051.0
 offset_bottom = 394.0
-text = "Submit"
+scale = Vector2(2, 2)
+tooltip_text = "Submit
+"
+icon = ExtResource("4_e7r37")
+flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="DifferenceList" type="VBoxContainer" parent="Control" unique_id=1433111573]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -4.7969923
-anchor_top = 17.473684
-anchor_right = -3.413534
-anchor_bottom = 17.473684
+anchor_left = -4.9022555
+anchor_top = 17.649122
+anchor_right = -5.075188
+anchor_bottom = 16.152046
 offset_left = 947.0
 offset_top = 130.0
 offset_right = 1132.0
 offset_bottom = 310.0
+scale = Vector2(1.5, 1.5)
 metadata/_edit_use_anchors_ = true
 
 [node name="GuestScene" parent="." unique_id=1920533754 instance=ExtResource("3_c8kak")]
