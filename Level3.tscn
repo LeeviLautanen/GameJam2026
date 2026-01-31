@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://2hqe2w114soy"]
+
+[ext_resource type="Script" uid="uid://s8kvvq83dobk" path="res://Scripts/DifferenceList.cs" id="1_eywy2"]
+[ext_resource type="Script" uid="uid://djl160yyngc3v" path="res://Scripts/LevelManager.cs" id="1_qlmxs"]
+[ext_resource type="Texture2D" uid="uid://cqhnhsk8jq62f" path="res://Art/fullMasks/base/base_white.png" id="2_84iim"]
+[ext_resource type="Script" uid="uid://l0hcpvo2pnlb" path="res://Scripts/MaskManager.cs" id="4_545p4"]
+[ext_resource type="Texture2D" uid="uid://cvx5jy4yny6ag" path="res://Art/ui/clipboard_with_hand.png" id="4_m8l3s"]
+[ext_resource type="PackedScene" uid="uid://5dtgpw4gym5p" path="res://GuestScene.tscn" id="5_h8oof"]
+[ext_resource type="Texture2D" uid="uid://cps7hc2vkwp6m" path="res://Art/fullMasks/patterns/pattern_bubbles_all.png" id="6_h8oof"]
+[ext_resource type="Script" uid="uid://bi6f3qds5qlhr" path="res://Scripts/MaskDetail.cs" id="7_nqeel"]
+[ext_resource type="Texture2D" uid="uid://oofi75hkldyx" path="res://Art/fullMasks/patterns/pattern_bubbles_bottom.png" id="8_ayhma"]
+[ext_resource type="Texture2D" uid="uid://bpefhepp1p2vt" path="res://Art/fullMasks/patterns/pattern_bubbles_left.png" id="9_jnvkq"]
+[ext_resource type="Texture2D" uid="uid://bhiv7oxsn8eu1" path="res://Art/fullMasks/patterns/pattern_bubbles_right.png" id="10_fer6g"]
+[ext_resource type="Texture2D" uid="uid://bf02yf8m25iml" path="res://Art/fullMasks/patterns/pattern_bubbles_top.png" id="11_q1bdk"]
+[ext_resource type="Texture2D" uid="uid://dwshbi1nlrfxs" path="res://Art/fullMasks/patterns/pattern_stars_6.png" id="12_poju7"]
+[ext_resource type="Texture2D" uid="uid://mqi14p84myyq" path="res://Art/fullMasks/patterns/pattern_stars_7.png" id="13_2mspy"]
+[ext_resource type="Texture2D" uid="uid://b32oxd1fmcwvn" path="res://Art/fullMasks/patterns/pattern_stars_9.png" id="14_n276p"]
+[ext_resource type="Texture2D" uid="uid://ddms18sym6q3m" path="res://Art/fullMasks/patterns/pattern_stars_11.png" id="15_e621j"]
+[ext_resource type="Texture2D" uid="uid://oikom1vd4drd" path="res://Art/fullMasks/patterns/pattern_vines_all.png" id="16_l24hh"]
+[ext_resource type="Texture2D" uid="uid://dck5466ap8ivx" path="res://Art/fullMasks/patterns/pattern_vines_left.png" id="17_to7ic"]
+[ext_resource type="Texture2D" uid="uid://dgkgrm0vn4qu4" path="res://Art/fullMasks/patterns/pattern_vines_right.png" id="18_3sjbc"]
+[ext_resource type="Texture2D" uid="uid://eoyjl8d07bd1" path="res://Art/fullMasks/sides/sides_earrings_1_blue.png" id="19_fg4yq"]
+[ext_resource type="Texture2D" uid="uid://b73bgdyhhlxc7" path="res://Art/fullMasks/sides/sides_earrings_1_green.png" id="20_5kepd"]
+[ext_resource type="Texture2D" uid="uid://8x02lbnnxucj" path="res://Art/fullMasks/sides/sides_earrings_1_red.png" id="21_7kk2n"]
+[ext_resource type="Texture2D" uid="uid://2dfxqafo7cwu" path="res://Art/fullMasks/sides/sides_earrings_2_blue.png" id="22_owmfk"]
+[ext_resource type="Texture2D" uid="uid://bokh6qh0u1xxm" path="res://Art/fullMasks/sides/sides_earrings_2_green.png" id="23_m8l3s"]
+[ext_resource type="Texture2D" uid="uid://c11hf3lbwc8fa" path="res://Art/fullMasks/sides/sides_earrings_2_red.png" id="24_ej15d"]
+[ext_resource type="Texture2D" uid="uid://bk8c1s4puf6jo" path="res://Art/fullMasks/sides/sides_flowers_2_red.png" id="25_h80re"]
+[ext_resource type="Texture2D" uid="uid://ja58sj1q5k0n" path="res://Art/fullMasks/sides/sides_flowers_2_violet.png" id="26_liwxe"]
+[ext_resource type="Texture2D" uid="uid://dbch2al0xka8g" path="res://Art/fullMasks/sides/sides_flowers_2_yellow.png" id="27_ucsbk"]
+[ext_resource type="Texture2D" uid="uid://buiripc4an8s2" path="res://Art/fullMasks/sides/sides_ribbons_blue.png" id="28_2jnsg"]
+[ext_resource type="Texture2D" uid="uid://ci83gfqpo7ds1" path="res://Art/fullMasks/sides/sides_ribbons_green.png" id="29_eox0e"]
+[ext_resource type="Texture2D" uid="uid://l4yt4kqxrwoe" path="res://Art/fullMasks/sides/sides_ribbons_pink.png" id="30_shjx7"]
+[ext_resource type="Texture2D" uid="uid://c6oog2b77u5h7" path="res://Art/fullMasks/top/feathers/top_feathers_2_blue.png" id="31_be24h"]
+[ext_resource type="Texture2D" uid="uid://bi23tmqdewhos" path="res://Art/fullMasks/top/feathers/top_feathers_2_green.png" id="32_owmfk"]
+[ext_resource type="Texture2D" uid="uid://nhdtpu030ku2" path="res://Art/fullMasks/top/feathers/top_feathers_2_red.png" id="33_m8l3s"]
+[ext_resource type="Texture2D" uid="uid://bcmc1idc4si7d" path="res://Art/fullMasks/top/feathers/top_feathers_3_blue.png" id="34_ej15d"]
+[ext_resource type="Texture2D" uid="uid://dpex88s87nci5" path="res://Art/fullMasks/top/feathers/top_feathers_3_green.png" id="35_h80re"]
+[ext_resource type="Texture2D" uid="uid://bdax8r1i1ibqg" path="res://Art/fullMasks/top/feathers/top_feathers_3_red.png" id="36_liwxe"]
+[ext_resource type="Texture2D" uid="uid://bn4e0xxvfk3i" path="res://Art/fullMasks/top/flowers/top_flowers_5_red.png" id="37_ucsbk"]
+[ext_resource type="Texture2D" uid="uid://dufc2jwlu3d35" path="res://Art/fullMasks/top/flowers/top_flowers_5_violet.png" id="38_2jnsg"]
+[ext_resource type="Texture2D" uid="uid://d06ap3eytib0d" path="res://Art/fullMasks/top/flowers/top_flowers_5_yellow.png" id="39_eox0e"]
+[ext_resource type="Texture2D" uid="uid://bcg3x5o2nf55i" path="res://Art/fullMasks/top/flowers/top_flowers_6_red.png" id="40_shjx7"]
+[ext_resource type="Texture2D" uid="uid://d17lhdll13sxq" path="res://Art/fullMasks/top/flowers/top_flowers_6_violet.png" id="41_be24h"]
+[ext_resource type="Texture2D" uid="uid://b4hg51bobtpbh" path="res://Art/fullMasks/top/flowers/top_flowers_6_yellow.png" id="42_cdd2a"]
+[ext_resource type="Texture2D" uid="uid://o4k6q5ekxhmn" path="res://Art/fullMasks/top/flowers/top_flowers_7_red.png" id="43_158oe"]
+[ext_resource type="Texture2D" uid="uid://crsl53jux4wp0" path="res://Art/fullMasks/top/flowers/top_flowers_7_violet.png" id="44_j6ha6"]
+[ext_resource type="Texture2D" uid="uid://cedu75q6wh88e" path="res://Art/fullMasks/top/flowers/top_flowers_7_yellow.png" id="45_gpo5c"]
+
+[node name="Level3" type="Node2D" unique_id=2045035734]
+script = ExtResource("1_qlmxs")
+GuestMaskStopLocation = Vector2(549, 330)
+
+[node name="GuestScene" parent="." unique_id=1920533754 instance=ExtResource("5_h8oof")]
+position = Vector2(559, 368)
+scale = Vector2(0.9, 0.9)
+
+[node name="Control" type="Control" parent="." unique_id=1663893152]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 133.0
+offset_bottom = 57.0
+script = ExtResource("1_eywy2")
+metadata/_edit_use_anchors_ = true
+
+[node name="ClipboardWithHand" type="Sprite2D" parent="Control" unique_id=138435736]
+texture_filter = 1
+position = Vector2(286, 1023.99994)
+scale = Vector2(3, 3.337)
+texture = ExtResource("4_m8l3s")
+
+[node name="Label" type="Label" parent="Control/ClipboardWithHand" unique_id=809669143]
+texture_filter = 1
+offset_left = 21.454546
+offset_top = -83.89177
+offset_right = 157.45454
+offset_bottom = -60.89177
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Reference mask"
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Submit" type="Button" parent="Control" unique_id=580956588]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.2030075
+anchor_top = 16.333334
+anchor_right = -2.2030075
+anchor_bottom = 16.333334
+offset_left = 964.0
+offset_top = 363.0
+offset_right = 1051.0
+offset_bottom = 394.0
+text = "Submit"
+metadata/_edit_use_anchors_ = true
+
+[node name="DifferenceList" type="VBoxContainer" parent="Control" unique_id=781527942]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.827068
+anchor_top = 19.719297
+anchor_right = -4.1654134
+anchor_bottom = 18.754387
+offset_left = 947.0
+offset_top = 130.0
+offset_right = 1132.0
+offset_bottom = 310.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Mask" type="Sprite2D" parent="." unique_id=734301927]
+texture_filter = 1
+position = Vector2(547.00006, 1079)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_84iim")
+script = ExtResource("4_545p4")
+
+[node name="Pattern" type="Sprite2D" parent="Mask" unique_id=1090451935]
+texture = ExtResource("6_h8oof")
+script = ExtResource("7_nqeel")
+DetailName = "Patterns"
+Textures = Array[Texture2D]([ExtResource("6_h8oof"), ExtResource("8_ayhma"), ExtResource("9_jnvkq"), ExtResource("10_fer6g"), ExtResource("11_q1bdk"), ExtResource("12_poju7"), ExtResource("13_2mspy"), ExtResource("14_n276p"), ExtResource("15_e621j"), ExtResource("16_l24hh"), ExtResource("17_to7ic"), ExtResource("18_3sjbc")])
+
+[node name="SideAccessories" type="Sprite2D" parent="Mask" unique_id=1758587384]
+texture = ExtResource("19_fg4yq")
+script = ExtResource("7_nqeel")
+DetailName = "Side Accessories"
+Textures = Array[Texture2D]([ExtResource("19_fg4yq"), ExtResource("20_5kepd"), ExtResource("21_7kk2n"), ExtResource("22_owmfk"), ExtResource("23_m8l3s"), ExtResource("24_ej15d"), ExtResource("25_h80re"), ExtResource("26_liwxe"), ExtResource("27_ucsbk"), ExtResource("28_2jnsg"), ExtResource("29_eox0e"), ExtResource("30_shjx7")])
+
+[node name="Top" type="Sprite2D" parent="Mask" unique_id=58076350]
+texture = ExtResource("31_be24h")
+script = ExtResource("7_nqeel")
+DetailName = "Top Accessories"
+Textures = Array[Texture2D]([ExtResource("31_be24h"), ExtResource("32_owmfk"), ExtResource("33_m8l3s"), ExtResource("34_ej15d"), ExtResource("35_h80re"), ExtResource("36_liwxe"), ExtResource("37_ucsbk"), ExtResource("38_2jnsg"), ExtResource("39_eox0e"), ExtResource("40_shjx7"), ExtResource("41_be24h"), ExtResource("42_cdd2a"), ExtResource("43_158oe"), ExtResource("44_j6ha6"), ExtResource("45_gpo5c")])

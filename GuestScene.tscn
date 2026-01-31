@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://5dtgpw4gym5p"]
+
+[ext_resource type="Texture2D" uid="uid://d3gb8a2wc6u4s" path="res://Art/character/Character_1_shilouette.png" id="1_y7vwu"]
+
+[node name="GuestScene" type="Node2D" unique_id=1920533754]
+
+[node name="Character1Shilouette" type="Sprite2D" parent="." unique_id=1920131995]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_y7vwu")
