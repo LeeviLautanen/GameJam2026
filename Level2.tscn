@@ -1,6 +1,13 @@
-[gd_scene format=3 uid="uid://dxobx03bhoc36"]
+[gd_scene format=3 uid="uid://40821jecs6kb"]
 
 [ext_resource type="Script" uid="uid://s8kvvq83dobk" path="res://Scripts/DifferenceList.cs" id="1_8mrap"]
+[ext_resource type="Texture2D" uid="uid://c6pigv7j5cn8s" path="res://Art/halfMasks/half_mask_type_1/base/half_mask_base_blue.png" id="2_psxy2"]
+[ext_resource type="Texture2D" uid="uid://b0rx6t8f3it3p" path="res://Art/halfMasks/half_mask_type_1/details blue/half_mask_base_blue_details.png" id="3_psxy2"]
+[ext_resource type="Script" uid="uid://l0hcpvo2pnlb" path="res://Scripts/MaskManager.cs" id="3_wwdpc"]
+[ext_resource type="Texture2D" uid="uid://b8werx8htkc7v" path="res://Art/halfMasks/half_mask_type_1/feathers blue/half_mask_base_blue_feathers.png" id="4_wwdpc"]
+[ext_resource type="Texture2D" uid="uid://c5em27h2xfico" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_blue_gem.png" id="5_6faey"]
+[ext_resource type="Script" uid="uid://bi6f3qds5qlhr" path="res://Scripts/MaskDetail.cs" id="5_nc7oo"]
+[ext_resource type="Texture2D" uid="uid://cg380ku3tguwp" path="res://Art/halfMasks/half_mask_type_1/bottom/half_mask_base_beak_1.png" id="8_nc7oo"]
 
 [node name="Level2" type="Node2D" unique_id=930230761]
 
@@ -28,3 +35,24 @@ offset_top = 130.0
 offset_right = 1132.0
 offset_bottom = 310.0
 metadata/_edit_use_anchors_ = true
+
+[node name="HalfMaskBaseBlue" type="Sprite2D" parent="." unique_id=1569226365]
+texture_filter = 1
+position = Vector2(315, 296)
+texture = ExtResource("2_psxy2")
+script = ExtResource("3_wwdpc")
+
+[node name="HalfMaskBaseBluePattern" type="Sprite2D" parent="HalfMaskBaseBlue" unique_id=2107466530]
+texture = ExtResource("3_psxy2")
+script = ExtResource("5_nc7oo")
+
+[node name="HalfMaskBaseBlueFeathers" type="Sprite2D" parent="HalfMaskBaseBlue" unique_id=1854539873]
+texture = ExtResource("4_wwdpc")
+script = ExtResource("5_nc7oo")
+
+[node name="HalfMaskBaseBlueGem" type="Sprite2D" parent="HalfMaskBaseBlue" unique_id=1720410781]
+texture = ExtResource("5_6faey")
+script = ExtResource("5_nc7oo")
+
+[node name="HalfMaskBaseBeak1" type="Sprite2D" parent="HalfMaskBaseBlue/HalfMaskBaseBlueGem" unique_id=1738416225]
+texture = ExtResource("8_nc7oo")
