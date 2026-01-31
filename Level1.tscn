@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://djos3kt7quw2v"]
 
+[ext_resource type="Script" uid="uid://djl160yyngc3v" path="res://Scripts/LevelManager.cs" id="1_1bjei"]
 [ext_resource type="Texture2D" uid="uid://l58pilahwhrx" path="res://Art/Placeholder/Base.PNG" id="1_s3sxq"]
 [ext_resource type="Script" uid="uid://l0hcpvo2pnlb" path="res://Scripts/MaskManager.cs" id="2_5py54"]
 [ext_resource type="Texture2D" uid="uid://bt53wb18qgea8" path="res://Art/Placeholder/Ears.PNG" id="3_1bjei"]
@@ -11,33 +12,35 @@
 [ext_resource type="Script" uid="uid://s8kvvq83dobk" path="res://Scripts/DifferenceList.cs" id="8_3gjqj"]
 
 [node name="Level1" type="Node2D" unique_id=1252822935]
+script = ExtResource("1_1bjei")
+ScaleSmall = 2.0
 
-[node name="Base" type="Sprite2D" parent="." unique_id=1641066384]
+[node name="Mask" type="Sprite2D" parent="." unique_id=1811019852]
 texture_filter = 1
-position = Vector2(510.00006, 306.00003)
+position = Vector2(350, 333.00003)
 scale = Vector2(3.415, 3.415)
 texture = ExtResource("1_s3sxq")
 script = ExtResource("2_5py54")
 
-[node name="Ears" type="Sprite2D" parent="Base" unique_id=2054170775]
+[node name="Ears" type="Sprite2D" parent="Mask" unique_id=939514144]
 texture = ExtResource("3_1bjei")
 script = ExtResource("4_5g1s2")
 DetailName = "Ears"
 Textures = Array[Texture2D]([ExtResource("3_1bjei")])
 
-[node name="Eyes" type="Sprite2D" parent="Base" unique_id=1238309491]
+[node name="Eyes" type="Sprite2D" parent="Mask" unique_id=1101212216]
 texture = ExtResource("5_aiv1b")
 script = ExtResource("4_5g1s2")
 DetailName = "Eyes"
 Textures = Array[Texture2D]([ExtResource("5_aiv1b"), ExtResource("6_5py54")])
 
-[node name="Mouth" type="Sprite2D" parent="Base" unique_id=2000915286]
+[node name="Mouth" type="Sprite2D" parent="Mask" unique_id=339644423]
 texture = ExtResource("6_wapi5")
 script = ExtResource("4_5g1s2")
 DetailName = "Mouth"
 Textures = Array[Texture2D]([ExtResource("6_wapi5")])
 
-[node name="Nose" type="Sprite2D" parent="Base" unique_id=1408035836]
+[node name="Nose" type="Sprite2D" parent="Mask" unique_id=306255905]
 texture = ExtResource("7_a2cb0")
 script = ExtResource("4_5g1s2")
 DetailName = "Nose"
