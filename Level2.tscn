@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dxobx03bhoc36"]
+
+[ext_resource type="Script" uid="uid://s8kvvq83dobk" path="res://Scripts/DifferenceList.cs" id="1_8mrap"]
+
+[node name="Level2" type="Node2D" unique_id=930230761]
+
+[node name="Control" type="Control" parent="." unique_id=1137502596]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 133.0
+offset_bottom = 57.0
+script = ExtResource("1_8mrap")
+metadata/_edit_use_anchors_ = true
+
+[node name="Submit" type="Button" parent="Control" unique_id=1902225099]
+layout_mode = 0
+offset_left = 964.0
+offset_top = 363.0
+offset_right = 1051.0
+offset_bottom = 394.0
+text = "Submit"
+metadata/_edit_use_anchors_ = true
+
+[node name="DifferenceList" type="VBoxContainer" parent="Control" unique_id=1433111573]
+layout_mode = 0
+offset_left = 947.0
+offset_top = 130.0
+offset_right = 1132.0
+offset_bottom = 310.0
+metadata/_edit_use_anchors_ = true

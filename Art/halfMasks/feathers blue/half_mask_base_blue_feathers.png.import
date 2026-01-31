@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da0efs7vrib4p"
-path="res://.godot/imported/half_mask_pattern_details.png-9058452609d24ccb343356729b8e9718.ctex"
+uid="uid://b8werx8htkc7v"
+path="res://.godot/imported/half_mask_base_blue_feathers.png-42806521597ef50367d30fd3535d1ac2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/halfMasks/half_mask_pattern_details.png"
-dest_files=["res://.godot/imported/half_mask_pattern_details.png-9058452609d24ccb343356729b8e9718.ctex"]
+source_file="res://Art/halfMasks/feathers blue/half_mask_base_blue_feathers.png"
+dest_files=["res://.godot/imported/half_mask_base_blue_feathers.png-42806521597ef50367d30fd3535d1ac2.ctex"]
 
 [params]
 
