@@ -18,7 +18,6 @@ public partial class MaskDetail : Sprite2D
 
     public void HideDetail()
     {
-        GD.Print("Hiding detail");
         sprite2d.Visible = false;
     }
 
