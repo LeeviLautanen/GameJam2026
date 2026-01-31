@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://djos3kt7quw2v"]
+
+[ext_resource type="Texture2D" uid="uid://l58pilahwhrx" path="res://Art/Placeholder/Base.PNG" id="1_s3sxq"]
+[ext_resource type="Script" uid="uid://l0hcpvo2pnlb" path="res://Scripts/MaskManager.cs" id="2_5py54"]
+[ext_resource type="Texture2D" uid="uid://bt53wb18qgea8" path="res://Art/Placeholder/Ears.PNG" id="3_1bjei"]
+[ext_resource type="Script" uid="uid://bi6f3qds5qlhr" path="res://Scripts/MaskDetail.cs" id="4_5g1s2"]
+[ext_resource type="Texture2D" uid="uid://bu02v78y4486q" path="res://Art/Placeholder/Eyes.PNG" id="5_aiv1b"]
+[ext_resource type="Texture2D" uid="uid://capfqskpnwksn" path="res://Art/Placeholder/Mouth.PNG" id="6_wapi5"]
+[ext_resource type="Texture2D" uid="uid://bc8cho3j4lasj" path="res://Art/Placeholder/Nose.PNG" id="7_a2cb0"]
+[ext_resource type="Script" uid="uid://s8kvvq83dobk" path="res://Scripts/DifferenceList.cs" id="8_3gjqj"]
+
+[node name="Level1" type="Node2D" unique_id=1252822935]
+
+[node name="Base" type="Sprite2D" parent="." unique_id=1641066384]
+texture_filter = 1
+position = Vector2(510.00006, 306.00003)
+scale = Vector2(3.415, 3.415)
+texture = ExtResource("1_s3sxq")
+script = ExtResource("2_5py54")
+
+[node name="Ears" type="Sprite2D" parent="Base" unique_id=2054170775]
+texture = ExtResource("3_1bjei")
+script = ExtResource("4_5g1s2")
+DetailName = "Ears"
+
+[node name="Eyes" type="Sprite2D" parent="Base" unique_id=1238309491]
+texture = ExtResource("5_aiv1b")
+script = ExtResource("4_5g1s2")
+DetailName = "Eyes"
+
+[node name="Mouth" type="Sprite2D" parent="Base" unique_id=2000915286]
+texture = ExtResource("6_wapi5")
+script = ExtResource("4_5g1s2")
+DetailName = "Mouth"
+
+[node name="Nose" type="Sprite2D" parent="Base" unique_id=1408035836]
+texture = ExtResource("7_a2cb0")
+script = ExtResource("4_5g1s2")
+DetailName = "Nose"
+
+[node name="Control" type="Control" parent="." unique_id=1959831784]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 133.0
+offset_bottom = 57.0
+script = ExtResource("8_3gjqj")
+
+[node name="Submit" type="Button" parent="Control" unique_id=1829135330]
+layout_mode = 0
+offset_left = 964.0
+offset_top = 363.0
+offset_right = 1051.0
+offset_bottom = 394.0
+text = "Submit"
+
+[node name="DifferenceList" type="VBoxContainer" parent="Control" unique_id=47240173]
+layout_mode = 0
+offset_left = 947.0
+offset_top = 130.0
+offset_right = 1132.0
+offset_bottom = 310.0
