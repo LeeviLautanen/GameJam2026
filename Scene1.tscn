@@ -32,9 +32,26 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="MenuBar" type="MenuBar" parent="Control" unique_id=904388708]
+[node name="OptionButton" type="OptionButton" parent="Control" unique_id=1614814395]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 894.0
+offset_top = 74.0
+offset_right = 1123.0
+offset_bottom = 122.0
+item_count = 4
+popup/item_0/text = "Ears"
+popup/item_0/id = 0
+popup/item_1/text = "Eyes"
+popup/item_1/id = 1
+popup/item_2/text = "Mouth"
+popup/item_2/id = 2
+popup/item_3/text = "Nose"
+popup/item_3/id = 3
 
-[node name="PopupMenu" type="PopupMenu" parent="Control/MenuBar" unique_id=364449314]
+[node name="Button" type="Button" parent="Control" unique_id=1829135330]
+layout_mode = 0
+offset_left = 964.0
+offset_top = 363.0
+offset_right = 1051.0
+offset_bottom = 394.0
+text = "Submit"
