@@ -3,7 +3,10 @@ using System.Collections.Generic;
 
 public partial class MaskManager : Sprite2D
 {
+    [Export(PropertyHint.Range, "0,1,0.01")]
+    public float NoDetailChance = 0.1f;
     public List<MaskDetail> maskDetails = new();
+
     private RandomNumberGenerator rng = new();
     private int[] referenceMask;
 
@@ -35,10 +38,13 @@ public partial class MaskManager : Sprite2D
     private int[] GenerateMask()
     {
         int[] maskConfig = new int[maskDetails.Count];
+        rng.Randomize();
+
+        Visible = true;
 
         for (int i = 0; i < maskDetails.Count; i++)
         {
-            if (rng.RandiRange(0, 1) == 0)
+            if (NoDetailChance > rng.Randf())
             {
                 maskDetails[i].HideDetail();
                 maskConfig[i] = -1;
@@ -49,6 +55,7 @@ public partial class MaskManager : Sprite2D
             }
         }
 
+        GD.Print("Generated Mask Configuration: " + string.Join(", ", maskConfig));
         return maskConfig;
     }
 
