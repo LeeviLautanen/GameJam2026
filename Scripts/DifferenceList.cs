@@ -1,12 +1,13 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 public partial class DifferenceList : Control
 {
     private MaskManager maskManager;
     private LevelManager levelManager;
-    private ButtonGroup group;
+    private List<CheckBox> checkBoxes;
     private VBoxContainer diffList;
 
     public override void _Ready()
@@ -29,17 +30,15 @@ public partial class DifferenceList : Control
 
         diffList = GetNode<VBoxContainer>("DifferenceList");
 
-        // Create a single ButtonGroup resource
-        group = new ButtonGroup();
+        checkBoxes = new();
 
         foreach (var maskDetail in maskManager.GetMaskDetails())
         {
-            var radio = new CheckBox();
-            radio.Text = maskDetail.DetailName;
-            radio.ToggleMode = true;
-            radio.ButtonGroup = group;
-
-            diffList.AddChild(radio);
+            var checkbox = new CheckBox();
+            checkbox.Text = maskDetail.DetailName;
+            checkbox.ToggleMode = true;
+            diffList.AddChild(checkbox);
+            checkBoxes.Add(checkbox);
         }
 
         var submit = GetNode<Button>("Submit");
@@ -48,21 +47,20 @@ public partial class DifferenceList : Control
 
     private void OnGuestProcessed(int guestNumber)
     {
-        var buttons = group.GetButtons();
-        foreach (var button in buttons)
+        foreach (var checkbox in checkBoxes)
         {
-            button.Disabled = false;
+            checkbox.Disabled = false;      // re‑enable
+            checkbox.ButtonPressed = false; // uncheck
         }
     }
 
     private void OnSubmit()
     {
-        var buttons = group.GetButtons();
         int detailIndex = -1;
 
-        for (int i = 0; i < buttons.Count; i++)
+        for (int i = 0; i < checkBoxes.Count; i++)
         {
-            if (buttons[i] == group.GetPressedButton())
+            if (checkBoxes[i].ButtonPressed)
             {
                 detailIndex = i;
                 break;
@@ -71,7 +69,7 @@ public partial class DifferenceList : Control
 
         bool correct = levelManager.DifferenceSubmitted(detailIndex);
 
-        if (correct)
+        if (correct && detailIndex != -1)
         {
             DisableButtonAtIndex(detailIndex);
         }
@@ -79,10 +77,14 @@ public partial class DifferenceList : Control
 
     public void DisableButtonAtIndex(int index)
     {
-        var buttons = group.GetButtons();
-        if (index < 0 || index >= buttons.Count) return;
+        if (index < 0 || index >= checkBoxes.Count)
+            return;
 
-        buttons[index].Disabled = true;
+        var checkbox = checkBoxes[index];
+
+        checkbox.Disabled = true;
+
+        checkbox.SetPressedNoSignal(false);
     }
 
     Node FindNodeWithScript<T>(Node root) where T : Node

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 
 public partial class MaskManager : Sprite2D
 {
-
-    public float NoDetailChance = 0.1f;
+    [Export(PropertyHint.Range, "0,1,0.01")]
+    public float RemoveDetailChance = 0.1f;
+    [Export(PropertyHint.Range, "0,1,0.01")]
+    public float ChangeDetailChance = 0.3f;
     public List<MaskDetail> maskDetails = new();
     public int[] MaskData;
 
@@ -13,6 +15,7 @@ public partial class MaskManager : Sprite2D
     public override void _Ready()
     {
         maskDetails = GetMaskDetails();
+        MaskData = new int[maskDetails.Count];
         GD.Print("MaskManager initialized with " + maskDetails.Count + " MaskDetails.");
     }
 
@@ -34,14 +37,21 @@ public partial class MaskManager : Sprite2D
 
         for (int i = 0; i < maskDetails.Count; i++)
         {
-            if (NoDetailChance > rng.Randf())
+            float r = rng.Randf();
+            if (r < RemoveDetailChance)
             {
+                GD.Print("Hiding detail: " + maskDetails[i].DetailName);
                 maskDetails[i].HideDetail();
                 newData[i] = -1;
             }
+            else if (r < RemoveDetailChance + ChangeDetailChance)
+            {
+                GD.Print("Changing detail: " + maskDetails[i].DetailName);
+                newData[i] = maskDetails[i].ShowRandomDetail();
+            }
             else
             {
-                newData[i] = maskDetails[i].ShowRandomDetail();
+                newData[i] = MaskData[i];
             }
         }
 

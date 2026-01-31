@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://40821jecs6kb"]
+[gd_scene format=3 uid="uid://dxobx03bhoc36"]
 
 [ext_resource type="Script" uid="uid://s8kvvq83dobk" path="res://Scripts/DifferenceList.cs" id="1_8mrap"]
 [ext_resource type="Script" uid="uid://djl160yyngc3v" path="res://Scripts/LevelManager.cs" id="1_fmt3s"]
 [ext_resource type="Texture2D" uid="uid://c6pigv7j5cn8s" path="res://Art/halfMasks/half_mask_type_1/base/half_mask_base_blue.png" id="2_psxy2"]
-[ext_resource type="PackedScene" uid="uid://5dtgpw4gym5p" path="res://GuestScene.tscn" id="3_c8kak"]
+[ext_resource type="PackedScene" path="res://GuestScene.tscn" id="3_c8kak"]
 [ext_resource type="Texture2D" uid="uid://b0rx6t8f3it3p" path="res://Art/halfMasks/half_mask_type_1/details blue/half_mask_base_blue_details.png" id="3_psxy2"]
 [ext_resource type="Script" uid="uid://l0hcpvo2pnlb" path="res://Scripts/MaskManager.cs" id="3_wwdpc"]
 [ext_resource type="Texture2D" uid="uid://b8werx8htkc7v" path="res://Art/halfMasks/half_mask_type_1/feathers blue/half_mask_base_blue_feathers.png" id="4_wwdpc"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://caogppfdqpvf7" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_pink_gem.png" id="34_ckv4c"]
 [ext_resource type="Texture2D" uid="uid://brn8vnyk0efqj" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_pink_gems.png" id="35_spmjc"]
 [ext_resource type="Texture2D" uid="uid://cvx5jy4yny6ag" path="res://Art/ui/clipboard_with_hand.png" id="38_d8gnr"]
+[ext_resource type="Script" path="res://Scripts/CameraController.cs" id="39_ytr4e"]
 
 [node name="Level2" type="Node2D" unique_id=930230761]
 script = ExtResource("1_fmt3s")
@@ -131,3 +132,4 @@ Textures = Array[Texture2D]([ExtResource("5_6faey"), ExtResource("29_u12cy"), Ex
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=866947176]
 anchor_mode = 0
+script = ExtResource("39_ytr4e")

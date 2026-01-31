@@ -10,12 +10,10 @@ public partial class LevelManager : Node
     Vector2 GuestMaskStopLocation = new(600, 300);
     [Export]
     Vector2 GuestMaskEndLocation = new(1500, 300);
-    [Export(PropertyHint.Range, "0,1,0.01")]
-    public float NoDetailChance = 0.1f;
     [Export]
     public int NumberOfGuests = 3;
     [Export]
-    float ScaleSmall = 0.9f;
+    float ScaleSmall = 2.0f;
     [Export]
     float StopWaitTime = 0.5f;
     [Signal]
@@ -26,6 +24,8 @@ public partial class LevelManager : Node
     private bool[] maskDifferences;
     private int guestsProcessed = 0;
     private Tween moveTween;
+    private bool submitPressed = false;
+
 
     public override void _Ready()
     {
@@ -62,7 +62,8 @@ public partial class LevelManager : Node
             moveTween.TweenProperty(guestMask, "scale", startingScale, 0.5f);
             await ToSignal(moveTween, Tween.SignalName.Finished);
 
-            while (Array.Exists(maskDifferences, x => x))
+            submitPressed = false;
+            while (Array.Exists(maskDifferences, x => x) == true || submitPressed == false)
                 await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
 
             moveTween = CreateTween();
@@ -101,14 +102,14 @@ public partial class LevelManager : Node
 
     public bool DifferenceSubmitted(int detailIndex)
     {
-        GD.Print(detailIndex);
+        submitPressed = true;
+
         if (detailIndex < 0 || detailIndex >= maskDifferences.Length)
         {
             return false;
         }
 
-        bool isCorrect = maskDifferences[detailIndex] == true;
-        if (isCorrect)
+        if (maskDifferences[detailIndex] == true)
         {
             maskDifferences[detailIndex] = false;
             return true;
