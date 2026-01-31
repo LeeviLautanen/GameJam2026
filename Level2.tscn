@@ -66,20 +66,21 @@ metadata/_edit_use_anchors_ = true
 [node name="HalfMaskBaseBlue" type="Sprite2D" parent="." unique_id=1569226365]
 texture_filter = 1
 position = Vector2(315, 296)
+scale = Vector2(3, 3)
 texture = ExtResource("2_psxy2")
 script = ExtResource("3_wwdpc")
-
-[node name="HalfMaskBaseBeak1" type="Sprite2D" parent="HalfMaskBaseBlue" unique_id=1738416225]
-texture = ExtResource("8_nc7oo")
-script = ExtResource("5_nc7oo")
-DetailName = "Beaks"
-Textures = Array[Texture2D]([ExtResource("8_nc7oo"), ExtResource("6_7astt"), ExtResource("7_fmt3s"), ExtResource("8_c8kak"), ExtResource("9_d8gnr"), ExtResource("10_ytr4e")])
 
 [node name="HalfMaskBaseBluePattern" type="Sprite2D" parent="HalfMaskBaseBlue" unique_id=2107466530]
 texture = ExtResource("3_psxy2")
 script = ExtResource("5_nc7oo")
 DetailName = "Patterns"
 Textures = Array[Texture2D]([ExtResource("3_psxy2"), ExtResource("12_e7r37"), ExtResource("13_gme1u"), ExtResource("14_ae8kp"), ExtResource("15_apgbi"), ExtResource("16_f7eu1")])
+
+[node name="HalfMaskBaseBeak1" type="Sprite2D" parent="HalfMaskBaseBlue" unique_id=1738416225]
+texture = ExtResource("8_nc7oo")
+script = ExtResource("5_nc7oo")
+DetailName = "Beaks"
+Textures = Array[Texture2D]([ExtResource("8_nc7oo"), ExtResource("6_7astt"), ExtResource("7_fmt3s"), ExtResource("8_c8kak"), ExtResource("9_d8gnr"), ExtResource("10_ytr4e")])
 
 [node name="HalfMaskBaseBlueFeathers" type="Sprite2D" parent="HalfMaskBaseBlue" unique_id=1854539873]
 texture = ExtResource("4_wwdpc")
