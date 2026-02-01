@@ -1,5 +1,3 @@
 .vscode
-*.csproj
-*.sln
 .godot
 *.kra
