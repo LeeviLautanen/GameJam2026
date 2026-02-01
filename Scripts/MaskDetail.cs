@@ -51,4 +51,17 @@ public partial class MaskDetail : Sprite2D
         Visible = true;
         return randomIndex;
     }
+
+    public void SetDetail(int index)
+    {
+        if (index == -1)
+        {
+            HideDetail();
+            return;
+        }
+
+        selectedVariant = index;
+        Texture = Textures[selectedVariant];
+        Visible = true;
+    }
 }

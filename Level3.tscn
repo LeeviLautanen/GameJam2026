@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://2hqe2w114soy"]
 
-[ext_resource type="Script" uid="uid://s8kvvq83dobk" path="res://Scripts/DifferenceList.cs" id="1_eywy2"]
+[ext_resource type="Script" uid="uid://s8kvvq83dobk" path="res://Scripts/ClipboardManager.cs" id="1_eywy2"]
 [ext_resource type="Script" uid="uid://djl160yyngc3v" path="res://Scripts/LevelManager.cs" id="1_qlmxs"]
 [ext_resource type="Texture2D" uid="uid://cqhnhsk8jq62f" path="res://Art/fullMasks/base/base_white.png" id="2_84iim"]
 [ext_resource type="Script" uid="uid://l0hcpvo2pnlb" path="res://Scripts/MaskManager.cs" id="4_545p4"]
@@ -48,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://o4k6q5ekxhmn" path="res://Art/fullMasks/top/flowers/top_flowers_7_red.png" id="43_158oe"]
 [ext_resource type="Texture2D" uid="uid://crsl53jux4wp0" path="res://Art/fullMasks/top/flowers/top_flowers_7_violet.png" id="44_j6ha6"]
 [ext_resource type="Texture2D" uid="uid://cedu75q6wh88e" path="res://Art/fullMasks/top/flowers/top_flowers_7_yellow.png" id="45_gpo5c"]
+
 
 [node name="Level3" type="Node2D" unique_id=2045035734]
 script = ExtResource("1_qlmxs")

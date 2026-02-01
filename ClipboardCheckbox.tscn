@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://di82624yy33wl"]
+
+[ext_resource type="Texture2D" uid="uid://cwhuayh3lf4oq" path="res://Art/ui/check_box_frames/check_box_frame_0000.png" id="1_7gqx4"]
+[ext_resource type="Script" uid="uid://be042dhd03071" path="res://Scripts/ClipboardCheckBox.cs" id="1_ibsx2"]
+[ext_resource type="Texture2D" uid="uid://6knuhkc6yf8v" path="res://Art/ui/check_box_frames/check_box_frame_0001.png" id="2_ibsx2"]
+[ext_resource type="Texture2D" uid="uid://dyd6bsdpi43u6" path="res://Art/ui/check_box_frames/check_box_frame_0002.png" id="3_djlin"]
+[ext_resource type="Texture2D" uid="uid://vt28rs8ss6c6" path="res://Art/ui/check_box_frames/check_box_frame_0003.png" id="4_6tva2"]
+[ext_resource type="Texture2D" uid="uid://ck6v4ktq8f70e" path="res://Art/ui/check_box_frames/check_box_frame_0004.png" id="5_rybg2"]
+[ext_resource type="Texture2D" uid="uid://d2i4ceoq761qj" path="res://Art/ui/check_box_frames/check_box_frame_0005.png" id="6_0e2fg"]
+[ext_resource type="Texture2D" uid="uid://iqosr2cfexa" path="res://Art/ui/check_box_frames/check_box_frame_0006.png" id="7_cl7ai"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_djlin"]
+font_size = 24
+font_color = Color(0.585062, 0.585062, 0.5850621, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6tva2"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7gqx4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7gqx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ibsx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_djlin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6tva2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rybg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0e2fg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cl7ai")
+}],
+"loop": false,
+"name": &"fill",
+"speed": 25.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ibsx2"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[node name="CheckBoxContainer" type="HBoxContainer" unique_id=1058832270]
+offset_left = 3.0
+offset_right = 203.0
+offset_bottom = 49.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+script = ExtResource("1_ibsx2")
+disabledSettings = SubResource("LabelSettings_djlin")
+enabledSettings = SubResource("LabelSettings_6tva2")
+
+[node name="Button" type="Button" parent="." unique_id=1232057898]
+texture_filter = 1
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+toggle_mode = true
+flat = true
+
+[node name="AnimatedCheckBox" type="AnimatedSprite2D" parent="Button" unique_id=1308567866]
+texture_filter = 1
+position = Vector2(-2, 3.5762787e-07)
+scale = Vector2(1.4418974, 1.4418974)
+sprite_frames = SubResource("SpriteFrames_7gqx4")
+animation = &"fill"
+frame = 6
+frame_progress = 1.0
+centered = false
+
+[node name="Label" type="Label" parent="." unique_id=838345442]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Test"
+label_settings = SubResource("LabelSettings_ibsx2")
+autowrap_mode = 3

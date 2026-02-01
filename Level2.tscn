@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://40821jecs6kb"]
 
-[ext_resource type="Script" uid="uid://s8kvvq83dobk" path="res://Scripts/DifferenceList.cs" id="1_8mrap"]
+[ext_resource type="Script" uid="uid://s8kvvq83dobk" path="res://Scripts/ClipboardManager.cs" id="1_8mrap"]
 [ext_resource type="Script" uid="uid://djl160yyngc3v" path="res://Scripts/LevelManager.cs" id="1_fmt3s"]
 [ext_resource type="Texture2D" uid="uid://c6pigv7j5cn8s" path="res://Art/halfMasks/half_mask_type_1/base/half_mask_base_blue.png" id="2_psxy2"]
 [ext_resource type="PackedScene" uid="uid://5dtgpw4gym5p" path="res://GuestScene.tscn" id="3_c8kak"]
@@ -9,22 +9,16 @@
 [ext_resource type="Script" uid="uid://l0hcpvo2pnlb" path="res://Scripts/MaskManager.cs" id="3_wwdpc"]
 [ext_resource type="Texture2D" uid="uid://ba2qru0rhr8qx" path="res://Art/ui/submit_button.png" id="4_e7r37"]
 [ext_resource type="Texture2D" uid="uid://b4o8a748vhei4" path="res://Art/ui/clipboard_page_turn_button.png" id="4_gme1u"]
+[ext_resource type="PackedScene" uid="uid://di82624yy33wl" path="res://ClipboardCheckbox.tscn" id="4_q3blq"]
 [ext_resource type="Texture2D" uid="uid://b8werx8htkc7v" path="res://Art/halfMasks/half_mask_type_1/feathers blue/half_mask_base_blue_feathers.png" id="4_wwdpc"]
 [ext_resource type="Texture2D" uid="uid://c5em27h2xfico" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_blue_gem.png" id="5_6faey"]
-[ext_resource type="Texture2D" uid="uid://cwhuayh3lf4oq" path="res://Art/ui/check_box_frames/check_box_frame_0000.png" id="5_16k7p"]
 [ext_resource type="Script" uid="uid://bi6f3qds5qlhr" path="res://Scripts/MaskDetail.cs" id="5_nc7oo"]
 [ext_resource type="Texture2D" uid="uid://36vekan57p1j" path="res://Art/halfMasks/half_mask_type_1/bottom/half_mask_base_beak_2.png" id="6_7astt"]
-[ext_resource type="Texture2D" uid="uid://6knuhkc6yf8v" path="res://Art/ui/check_box_frames/check_box_frame_0001.png" id="6_kkqk6"]
-[ext_resource type="Texture2D" uid="uid://dyd6bsdpi43u6" path="res://Art/ui/check_box_frames/check_box_frame_0002.png" id="7_d1oeb"]
 [ext_resource type="Texture2D" uid="uid://ceo6268tqbcrj" path="res://Art/halfMasks/half_mask_type_1/bottom/half_mask_base_beak_3.png" id="7_fmt3s"]
 [ext_resource type="Texture2D" uid="uid://cmstlbldvwqv4" path="res://Art/halfMasks/half_mask_type_1/bottom/half_mask_base_beak_4.png" id="8_c8kak"]
-[ext_resource type="Texture2D" uid="uid://vt28rs8ss6c6" path="res://Art/ui/check_box_frames/check_box_frame_0003.png" id="8_j14yx"]
 [ext_resource type="Texture2D" uid="uid://cg380ku3tguwp" path="res://Art/halfMasks/half_mask_type_1/bottom/half_mask_base_beak_1.png" id="8_nc7oo"]
 [ext_resource type="Texture2D" uid="uid://c6wgcsn1ijugq" path="res://Art/halfMasks/half_mask_type_1/bottom/half_mask_base_beak_5.png" id="9_d8gnr"]
-[ext_resource type="Texture2D" uid="uid://ck6v4ktq8f70e" path="res://Art/ui/check_box_frames/check_box_frame_0004.png" id="9_u12cy"]
-[ext_resource type="Texture2D" uid="uid://d2i4ceoq761qj" path="res://Art/ui/check_box_frames/check_box_frame_0005.png" id="10_63mpe"]
 [ext_resource type="Texture2D" uid="uid://qts8vu3blwvs" path="res://Art/halfMasks/half_mask_type_1/bottom/half_mask_base_beak_6.png" id="10_ytr4e"]
-[ext_resource type="Texture2D" uid="uid://iqosr2cfexa" path="res://Art/ui/check_box_frames/check_box_frame_0006.png" id="11_gmppw"]
 [ext_resource type="Texture2D" uid="uid://b2d4bfs132jxo" path="res://Art/halfMasks/half_mask_type_1/details blue/half_mask_base_blue_details_variation.png" id="12_e7r37"]
 [ext_resource type="Texture2D" uid="uid://do2vglcnyhnp8" path="res://Art/ui/hand_for_clipboard.png" id="12_q3blq"]
 [ext_resource type="Texture2D" uid="uid://0trufdyfmyir" path="res://Art/halfMasks/half_mask_type_1/details blue/half_mask_base_blue_details_variation_2.png" id="13_gme1u"]
@@ -50,59 +44,56 @@
 [ext_resource type="Texture2D" uid="uid://brn8vnyk0efqj" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_pink_gems.png" id="35_spmjc"]
 [ext_resource type="Script" uid="uid://b7ksbw1l0vg8g" path="res://Scripts/CameraController.cs" id="39_ytr4e"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_f7eu1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_16k7p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_kkqk6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_d1oeb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_j14yx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_u12cy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_63mpe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_gmppw")
-}],
-"loop": false,
-"name": &"fill",
-"speed": 15.0
-}]
-
 [node name="Level2" type="Node2D" unique_id=930230761]
 script = ExtResource("1_fmt3s")
-GuestMaskStopLocation = Vector2(568, 286)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=866947176]
+anchor_mode = 0
+script = ExtResource("39_ytr4e")
 
 [node name="Control" type="Control" parent="." unique_id=1137502596]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 133.0
-offset_bottom = 57.0
+offset_left = 595.0
+offset_top = 894.0
+offset_right = 728.0
+offset_bottom = 951.0
 script = ExtResource("1_8mrap")
+checkBoxScene = ExtResource("4_q3blq")
+metadata/_edit_use_anchors_ = true
+
+[node name="DifferenceList" type="VBoxContainer" parent="Control" unique_id=1199266005]
+layout_mode = 0
+offset_left = 30.0
+offset_top = -22.0
+offset_right = 234.0
+offset_bottom = 249.58899
+
+[node name="Submit" type="Button" parent="Control" unique_id=1902225099]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -6.9097743
+anchor_top = -2.491228
+anchor_right = -6.9097743
+anchor_bottom = -2.2982457
+offset_left = 964.0
+offset_top = 363.0
+offset_right = 1051.0
+offset_bottom = 394.0
+scale = Vector2(2, 2)
+tooltip_text = "Submit
+"
+icon = ExtResource("4_e7r37")
+flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="ClipboardWithHand" type="Sprite2D" parent="Control" unique_id=772532831]
+z_index = -1
 texture_filter = 1
-position = Vector2(595, 975.99994)
+position = Vector2(19.00003, 86.000015)
 scale = Vector2(2.8, 2.8)
 texture = ExtResource("3_hg0l0")
-
-[node name="AnimatedCheckBox" type="AnimatedSprite2D" parent="Control/ClipboardWithHand" unique_id=739851498]
-position = Vector2(15.35714, 53.928555)
-scale = Vector2(0.99999994, 0.99999994)
-sprite_frames = SubResource("SpriteFrames_f7eu1")
-animation = &"fill"
-autoplay = "fill"
 
 [node name="Label" type="Label" parent="Control/ClipboardWithHand" unique_id=455611803]
 texture_filter = 1
@@ -116,10 +107,10 @@ uppercase = true
 metadata/_edit_use_anchors_ = true
 
 [node name="TurnPage" type="Button" parent="Control/ClipboardWithHand" unique_id=112183971]
-offset_left = 117.666664
-offset_top = 51.99998
-offset_right = 197.66666
-offset_bottom = 118.999985
+offset_left = 117.5
+offset_top = 42.14289
+offset_right = 197.5
+offset_bottom = 109.14289
 icon = ExtResource("4_gme1u")
 flat = true
 
@@ -127,74 +118,42 @@ flat = true
 position = Vector2(105.00001, -3.5714025)
 texture = ExtResource("12_q3blq")
 
-[node name="Submit" type="Button" parent="Control" unique_id=1902225099]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -3.0827067
-anchor_top = 13.719298
-anchor_right = -3.4210527
-anchor_bottom = 14.122807
-offset_left = 964.0
-offset_top = 363.0
-offset_right = 1051.0
-offset_bottom = 394.0
-scale = Vector2(2, 2)
-tooltip_text = "Submit
-"
-icon = ExtResource("4_e7r37")
-flat = true
-metadata/_edit_use_anchors_ = true
+[node name="Guest" type="Node2D" parent="." unique_id=2130762081]
+position = Vector2(469.00003, 1278)
+scale = Vector2(0.7880734, 0.7880734)
 
-[node name="DifferenceList" type="VBoxContainer" parent="Control" unique_id=1433111573]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -4.9022555
-anchor_top = 17.649122
-anchor_right = -5.075188
-anchor_bottom = 16.152046
-offset_left = 947.0
-offset_top = 130.0
-offset_right = 1132.0
-offset_bottom = 310.0
-scale = Vector2(1.5, 1.5)
-metadata/_edit_use_anchors_ = true
+[node name="GuestScene" parent="Guest" unique_id=1920533754 instance=ExtResource("3_c8kak")]
+visible = false
+position = Vector2(0, -314)
 
-[node name="GuestScene" parent="." unique_id=1920533754 instance=ExtResource("3_c8kak")]
-position = Vector2(560, 335)
-
-[node name="Mask" type="Sprite2D" parent="." unique_id=1569226365]
+[node name="Mask" type="Sprite2D" parent="Guest" unique_id=1569226365]
 texture_filter = 1
-position = Vector2(562, 970)
+position = Vector2(9, -356)
 scale = Vector2(3, 3)
 texture = ExtResource("2_psxy2")
 script = ExtResource("3_wwdpc")
+ChangeDetailChance = 0.15
 
-[node name="HalfMaskBaseBluePattern" type="Sprite2D" parent="Mask" unique_id=2107466530]
+[node name="HalfMaskBaseBluePattern" type="Sprite2D" parent="Guest/Mask" unique_id=2107466530]
 texture = ExtResource("3_psxy2")
 script = ExtResource("5_nc7oo")
 DetailName = "Patterns"
 Textures = Array[Texture2D]([ExtResource("3_psxy2"), ExtResource("12_e7r37"), ExtResource("13_gme1u"), ExtResource("14_ae8kp"), ExtResource("15_apgbi"), ExtResource("16_f7eu1")])
 
-[node name="HalfMaskBaseBeak1" type="Sprite2D" parent="Mask" unique_id=1738416225]
+[node name="HalfMaskBaseBeak1" type="Sprite2D" parent="Guest/Mask" unique_id=1738416225]
 texture = ExtResource("8_nc7oo")
 script = ExtResource("5_nc7oo")
 DetailName = "Beaks"
 Textures = Array[Texture2D]([ExtResource("8_nc7oo"), ExtResource("6_7astt"), ExtResource("7_fmt3s"), ExtResource("8_c8kak"), ExtResource("9_d8gnr"), ExtResource("10_ytr4e")])
 
-[node name="HalfMaskBaseBlueFeathers" type="Sprite2D" parent="Mask" unique_id=1854539873]
+[node name="HalfMaskBaseBlueFeathers" type="Sprite2D" parent="Guest/Mask" unique_id=1854539873]
 texture = ExtResource("4_wwdpc")
 script = ExtResource("5_nc7oo")
 DetailName = "Feathers"
 Textures = Array[Texture2D]([ExtResource("4_wwdpc"), ExtResource("18_j286a"), ExtResource("19_fi16w"), ExtResource("20_vho2s"), ExtResource("21_annok"), ExtResource("22_hg0l0"), ExtResource("23_q3blq"), ExtResource("24_16k7p"), ExtResource("25_kkqk6"), ExtResource("26_d1oeb"), ExtResource("27_j14yx")])
 
-[node name="HalfMaskBaseBlueGem" type="Sprite2D" parent="Mask" unique_id=1720410781]
+[node name="HalfMaskBaseBlueGem" type="Sprite2D" parent="Guest/Mask" unique_id=1720410781]
 texture = ExtResource("5_6faey")
 script = ExtResource("5_nc7oo")
 DetailName = "Gems"
 Textures = Array[Texture2D]([ExtResource("5_6faey"), ExtResource("29_u12cy"), ExtResource("30_63mpe"), ExtResource("31_gmppw"), ExtResource("32_l0rr1"), ExtResource("33_acg8c"), ExtResource("34_ckv4c"), ExtResource("35_spmjc")])
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=866947176]
-anchor_mode = 0
-script = ExtResource("39_ytr4e")

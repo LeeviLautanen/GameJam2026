@@ -11,17 +11,18 @@ public partial class MaskManager : Sprite2D
     public int[] MaskData;
 
     private RandomNumberGenerator rng = new();
-    private Sprite2D guestSprite;
+    private Node2D guestScene;
 
     public override void _Ready()
     {
-        guestSprite = GetNode<Sprite2D>("Guest");
-        if (guestSprite == null)
+        guestScene = GetNode<Node2D>("../GuestScene");
+        if (guestScene == null)
         {
-            GD.PrintErr("Guest Sprite2D not found in MaskManager.");
+            GD.PrintErr("Guest not found in MaskManager.");
             return;
         }
 
+        rng.Randomize();
         maskDetails = GetMaskDetails();
         MaskData = new int[maskDetails.Count];
         GD.Print("MaskManager initialized with " + maskDetails.Count + " MaskDetails.");
@@ -29,12 +30,12 @@ public partial class MaskManager : Sprite2D
 
     public void HideGuestSprite()
     {
-        guestSprite.Visible = false;
+        guestScene.Visible = false;
     }
 
     public void ShowGuestSprite()
     {
-        guestSprite.Visible = true;
+        guestScene.Visible = true;
     }
 
     public List<MaskDetail> GetMaskDetails()
@@ -48,23 +49,22 @@ public partial class MaskManager : Sprite2D
         return list;
     }
 
-    public void GenerateMask()
+    public void GenerateReferenceMask()
     {
+        float RemoveChance = 0.2f;
+        float ChangeChance = 0.9f;
         int[] newData = new int[maskDetails.Count];
-        rng.Randomize();
 
         for (int i = 0; i < maskDetails.Count; i++)
         {
             float r = rng.Randf();
-            if (r < RemoveDetailChance)
+            if (r < RemoveChance)
             {
-                GD.Print("Hiding detail: " + maskDetails[i].DetailName);
                 maskDetails[i].HideDetail();
                 newData[i] = -1;
             }
-            else if (r < RemoveDetailChance + ChangeDetailChance)
+            else if (r < RemoveChance + ChangeChance)
             {
-                GD.Print("Changing detail: " + maskDetails[i].DetailName);
                 newData[i] = maskDetails[i].ShowRandomDetail();
             }
             else
@@ -72,6 +72,49 @@ public partial class MaskManager : Sprite2D
                 newData[i] = MaskData[i];
             }
         }
+
+        GD.Print("Generated reference mask: " + string.Join(", ", newData));
+
+        MaskData = newData;
+    }
+
+    public void GenerateMask(int[] referenceData)
+    {
+        int[] newData = new int[maskDetails.Count];
+
+        if (MaskData == null || maskDetails.Count != referenceData.Length)
+        {
+            GD.PrintErr("MaskData array is not properly initialized.");
+            return;
+        }
+
+        if (referenceData != null)
+        {
+            GD.Print("Reference Mask Data: " + string.Join(", ", maskDetails));
+
+            for (int i = 0; i < maskDetails.Count; i++)
+            {
+                MaskDetail detail = maskDetails[i];
+                detail.SetDetail(referenceData[i]);
+                newData[i] = referenceData[i];
+            }
+        }
+
+        for (int i = 0; i < maskDetails.Count; i++)
+        {
+            float r = rng.Randf();
+            if (r < RemoveDetailChance)
+            {
+                maskDetails[i].HideDetail();
+                newData[i] = -1;
+            }
+            else if (r < RemoveDetailChance + ChangeDetailChance)
+            {
+                newData[i] = maskDetails[i].ShowRandomDetail();
+            }
+        }
+
+        GD.Print("Generated Mask: " + string.Join(", ", newData));
 
         MaskData = newData;
     }
