@@ -45,6 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://brn8vnyk0efqj" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_pink_gems.png" id="35_spmjc"]
 [ext_resource type="Script" uid="uid://b7ksbw1l0vg8g" path="res://Scripts/CameraController.cs" id="39_ytr4e"]
 [ext_resource type="Texture2D" uid="uid://bt303vcmgkui2" path="res://Art/ui/x_white.png" id="44_f7eu1"]
+[ext_resource type="AudioStream" uid="uid://ds2ivx5aymiv1" path="res://Art/sound/masquerade_muffled_with_night_sounds.mp3" id="45_j286a"]
 
 [node name="Level2" type="Node2D" unique_id=930230761]
 script = ExtResource("1_fmt3s")
@@ -196,3 +197,9 @@ texture = ExtResource("5_6faey")
 script = ExtResource("5_nc7oo")
 DetailName = "Gems"
 Textures = Array[Texture2D]([ExtResource("5_6faey"), ExtResource("29_u12cy"), ExtResource("30_63mpe"), ExtResource("31_gmppw"), ExtResource("32_l0rr1"), ExtResource("33_acg8c"), ExtResource("34_ckv4c"), ExtResource("35_spmjc")])
+
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1152491174]
+stream = ExtResource("45_j286a")
+autoplay = true
+playback_type = 1
+parameters/looping = true

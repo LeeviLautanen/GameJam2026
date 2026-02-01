@@ -48,11 +48,10 @@
 [ext_resource type="Texture2D" uid="uid://o4k6q5ekxhmn" path="res://Art/fullMasks/top/flowers/top_flowers_7_red.png" id="43_158oe"]
 [ext_resource type="Texture2D" uid="uid://crsl53jux4wp0" path="res://Art/fullMasks/top/flowers/top_flowers_7_violet.png" id="44_j6ha6"]
 [ext_resource type="Texture2D" uid="uid://cedu75q6wh88e" path="res://Art/fullMasks/top/flowers/top_flowers_7_yellow.png" id="45_gpo5c"]
-
+[ext_resource type="AudioStream" uid="uid://ds2ivx5aymiv1" path="res://Art/sound/masquerade_muffled_with_night_sounds.mp3" id="49_liwxe"]
 
 [node name="Level3" type="Node2D" unique_id=2045035734]
 script = ExtResource("1_qlmxs")
-GuestMaskStopLocation = Vector2(549, 330)
 
 [node name="GuestScene" parent="." unique_id=1920533754 instance=ExtResource("5_h8oof")]
 position = Vector2(559, 368)
@@ -95,7 +94,7 @@ metadata/_edit_use_anchors_ = true
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -1.7894737
+anchor_left = -2.1203008
 anchor_top = 14.964912
 anchor_right = -2.1203008
 anchor_bottom = 15.157895
@@ -115,7 +114,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -4.827068
-anchor_top = 19.719297
+anchor_top = 18.754387
 anchor_right = -4.1654134
 anchor_bottom = 18.754387
 offset_left = 947.0
@@ -148,3 +147,9 @@ texture = ExtResource("31_be24h")
 script = ExtResource("7_nqeel")
 DetailName = "Top Accessories"
 Textures = Array[Texture2D]([ExtResource("31_be24h"), ExtResource("32_owmfk"), ExtResource("33_m8l3s"), ExtResource("34_ej15d"), ExtResource("35_h80re"), ExtResource("36_liwxe"), ExtResource("37_ucsbk"), ExtResource("38_2jnsg"), ExtResource("39_eox0e"), ExtResource("40_shjx7"), ExtResource("41_be24h"), ExtResource("42_cdd2a"), ExtResource("43_158oe"), ExtResource("44_j6ha6"), ExtResource("45_gpo5c")])
+
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=84261169]
+stream = ExtResource("49_liwxe")
+autoplay = true
+playback_type = 1
+parameters/looping = true
