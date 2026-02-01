@@ -5,17 +5,9 @@ using System.Collections.Generic;
 public partial class LevelManager : Node
 {
     [Export]
-    Vector2 GuestMaskStartLocation = new(-200, 300);
-    [Export]
-    Vector2 GuestMaskStopLocation = new(600, 300);
-    [Export]
-    Vector2 GuestMaskEndLocation = new(1500, 300);
-    [Export]
     public int NumberOfGuests = 3;
     [Export]
-    float ScaleSmall = 2.0f;
-    [Export]
-    float StopWaitTime = 0.5f;
+    public float ScaleSmall = 1.5f;
     [Signal]
     public delegate void GuestProcessedEventHandler(int guestNumber);
 
@@ -25,11 +17,39 @@ public partial class LevelManager : Node
     private int guestsProcessed = 0;
     private Tween moveTween;
     private bool submitPressed = false;
-
+    private CameraController cameraController;
+    private Vector2I screenSize;
+    private Vector2 guestStartLocation;
+    private Vector2 guestStopLocation;
+    private Vector2 guestEndLocation;
+    private float StopWaitTime = 0.3f;
+    private float guestMoveSpeed = 1.0f;
+    private float guestZoomSpeed = 0.5f;
+    private float scaleBig = 3.0f;
 
     public override void _Ready()
     {
         referenceMask = GetNode<MaskManager>("Mask");
+        if (referenceMask == null)
+        {
+            GD.PrintErr("Reference MaskManager not found in the scene tree.");
+            return;
+        }
+
+        cameraController = GetNode<CameraController>("Camera2D");
+        if (cameraController == null)
+        {
+            GD.PrintErr("CameraController not found in the scene tree.");
+            return;
+        }
+
+        screenSize = (Vector2I)GetViewport().GetVisibleRect().Size;
+
+        guestStartLocation = new Vector2(0 - 300, screenSize.Y);
+        guestStopLocation = new Vector2(screenSize.X / 2, screenSize.Y);
+        guestEndLocation = new Vector2(screenSize.X + 300, screenSize.Y);
+
+        referenceMask.HideGuestSprite();
         referenceMask.GenerateMask();
         maskDifferences = new bool[referenceMask.maskDetails.Count];
         _ = RunGuestCycle();
@@ -39,39 +59,49 @@ public partial class LevelManager : Node
     {
         guestMask = referenceMask.Duplicate() as MaskManager;
         AddChild(guestMask);
-
-        Vector2 startingScale = guestMask.Scale;
+        guestMask.maskDetails = guestMask.GetMaskDetails();
+        guestMask.ShowGuestSprite();
 
         while (guestsProcessed < NumberOfGuests)
         {
-            guestMask.Position = GuestMaskStartLocation;
-            GD.Print(guestMask.Scale);
-            Vector2 newSize = new Vector2(ScaleSmall, ScaleSmall);
-            GD.Print(newSize);
-            guestMask.Scale = newSize;
+            guestMask.Position = guestStartLocation;
+            guestMask.Scale = new(ScaleSmall, ScaleSmall);
             guestMask.ShowMask();
             GenerateGuestMask();
 
             moveTween = CreateTween();
-            moveTween.TweenProperty(guestMask, "position", GuestMaskStopLocation, 0.5f);
+            moveTween.TweenProperty(guestMask, "position", guestStopLocation, guestMoveSpeed)
+                     .SetTrans(Tween.TransitionType.Sine)
+                     .SetEase(Tween.EaseType.InOut);
             await ToSignal(moveTween, Tween.SignalName.Finished);
 
             await ToSignal(GetTree().CreateTimer(StopWaitTime), SceneTreeTimer.SignalName.Timeout);
 
             moveTween = CreateTween();
-            moveTween.TweenProperty(guestMask, "scale", startingScale, 0.5f);
+            moveTween.TweenProperty(guestMask, "scale", new Vector2(scaleBig, scaleBig), guestZoomSpeed)
+                     .SetTrans(Tween.TransitionType.Sine)
+                     .SetEase(Tween.EaseType.InOut);
             await ToSignal(moveTween, Tween.SignalName.Finished);
+
+            cameraController.BlockInput = false;
 
             submitPressed = false;
-            while (Array.Exists(maskDifferences, x => x) == true || submitPressed == false)
+            while (Array.Exists(maskDifferences, x => x) || !submitPressed)
                 await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
 
+            cameraController.BlockInput = true;
+            cameraController.MoveUp();
+
             moveTween = CreateTween();
-            moveTween.TweenProperty(guestMask, "scale", new Vector2(ScaleSmall, ScaleSmall), 0.5f);
+            moveTween.TweenProperty(guestMask, "scale", new Vector2(ScaleSmall, ScaleSmall), guestZoomSpeed)
+                     .SetTrans(Tween.TransitionType.Sine)
+                     .SetEase(Tween.EaseType.InOut);
             await ToSignal(moveTween, Tween.SignalName.Finished);
 
             moveTween = CreateTween();
-            moveTween.TweenProperty(guestMask, "position", GuestMaskEndLocation, 0.5f);
+            moveTween.TweenProperty(guestMask, "position", guestEndLocation, guestMoveSpeed)
+                     .SetTrans(Tween.TransitionType.Sine)
+                     .SetEase(Tween.EaseType.InOut);
             await ToSignal(moveTween, Tween.SignalName.Finished);
 
             guestMask.HideMask();
