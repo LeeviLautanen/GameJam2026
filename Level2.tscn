@@ -47,6 +47,9 @@
 [ext_resource type="Texture2D" uid="uid://bt303vcmgkui2" path="res://Art/ui/x_white.png" id="44_f7eu1"]
 [ext_resource type="AudioStream" uid="uid://ds2ivx5aymiv1" path="res://Art/sound/masquerade_muffled_with_night_sounds.mp3" id="45_j286a"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_vho2s"]
+font_size = 30
+
 [sub_resource type="LabelSettings" id="LabelSettings_j286a"]
 font_color = Color(0, 0, 0, 1)
 
@@ -57,6 +60,7 @@ font_color = Color(0, 0, 0, 1)
 [node name="Level2" type="Node2D" unique_id=930230761]
 script = ExtResource("1_fmt3s")
 NumberOfGuests = 10
+LevelTimeSeconds = 40.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=866947176]
 anchor_mode = 0
@@ -98,6 +102,14 @@ position = Vector2(1105.4626, 35.462654)
 scale = Vector2(-2.5785062, -2.5785062)
 texture = ExtResource("4_j286a")
 
+[node name="TimerLabel" type="Label" parent="Camera2D" unique_id=1305229438]
+offset_left = 26.0
+offset_top = 25.0
+offset_right = 105.0
+offset_bottom = 67.0
+text = "60"
+label_settings = SubResource("LabelSettings_vho2s")
+
 [node name="Control" type="Control" parent="." unique_id=1137502596]
 layout_mode = 3
 anchors_preset = 0
@@ -126,7 +138,7 @@ label_settings = SubResource("LabelSettings_j286a")
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -6.6090226
+anchor_left = -6.9473686
 anchor_top = -2.5789473
 anchor_right = -6.9473686
 anchor_bottom = -2.3859649

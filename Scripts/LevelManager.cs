@@ -7,6 +7,8 @@ public partial class LevelManager : Node
 {
     [Export]
     public int NumberOfGuests = 3;
+    [Export]
+    public float LevelTimeSeconds = 60f;
     [Signal]
     public delegate void GuestProcessedEventHandler(int guestNumber);
 
@@ -27,6 +29,9 @@ public partial class LevelManager : Node
     private float scaleSmall = 0.7f;
     private float scaleBig = 1.0f;
     private int health = 3;
+    private Label timerLabel;
+    private float timeRemaining;
+    private bool timerRunning = false;
 
     public override async void _Ready()
     {
@@ -47,6 +52,11 @@ public partial class LevelManager : Node
         cameraController.SetHealth(health);
         screenSize = (Vector2I)GetViewport().GetVisibleRect().Size;
 
+        timerLabel = GetNode<Label>("Camera2D/TimerLabel");
+        timeRemaining = LevelTimeSeconds;
+        UpdateTimerLabel();
+        timerRunning = true;
+
         guestStartLocation = new Vector2(0 - 300, screenSize.Y);
         guestStopLocation = new Vector2(screenSize.X / 2, screenSize.Y);
         guestEndLocation = new Vector2(screenSize.X + 300, screenSize.Y);
@@ -61,8 +71,35 @@ public partial class LevelManager : Node
     {
         await FadeFromBlack();
         _ = RunGuestCycle();
+        _ = RunTimer();
     }
 
+    private async System.Threading.Tasks.Task RunTimer()
+    {
+        while (timerRunning)
+        {
+            await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+
+            timeRemaining -= (float)GetProcessDeltaTime();
+            if (timeRemaining < 0)
+                timeRemaining = 0;
+
+            UpdateTimerLabel();
+
+            if (timeRemaining <= 0)
+            {
+                timerRunning = false;
+                await FadeAndSwitchScene("Level2.tscn");
+                return;
+            }
+        }
+    }
+
+    private void UpdateTimerLabel()
+    {
+        int seconds = Mathf.CeilToInt(timeRemaining);
+        timerLabel.Text = seconds.ToString();
+    }
 
     private async System.Threading.Tasks.Task RunGuestCycle()
     {
