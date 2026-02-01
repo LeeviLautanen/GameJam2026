@@ -10,6 +10,7 @@ public partial class CameraController : Camera2D
     private Vector2I screenSize;
     private Vector2 upPosition;
     private Vector2 downPosition;
+    private bool isMoving = false;
 
     public override void _Ready()
     {
@@ -23,7 +24,7 @@ public partial class CameraController : Camera2D
 
     public override void _Process(double delta)
     {
-        if (BlockInput) return;
+        if (BlockInput || isMoving) return;
 
         if (Input.IsActionJustPressed("MoveDown"))
             MoveDown();
@@ -43,7 +44,7 @@ public partial class CameraController : Camera2D
 
     private async void AnimateToPosition(Vector2 target)
     {
-        BlockInput = true;
+        isMoving = true;
 
         Tween tween = GetTree().CreateTween();
         tween.TweenProperty(this, "global_position", target, MoveDuration)
@@ -52,6 +53,6 @@ public partial class CameraController : Camera2D
 
         await ToSignal(tween, Tween.SignalName.Finished);
 
-        BlockInput = false;
+        isMoving = false;
     }
 }

@@ -11,12 +11,30 @@ public partial class MaskManager : Sprite2D
     public int[] MaskData;
 
     private RandomNumberGenerator rng = new();
+    private Sprite2D guestSprite;
 
     public override void _Ready()
     {
+        guestSprite = GetNode<Sprite2D>("Guest");
+        if (guestSprite == null)
+        {
+            GD.PrintErr("Guest Sprite2D not found in MaskManager.");
+            return;
+        }
+
         maskDetails = GetMaskDetails();
         MaskData = new int[maskDetails.Count];
         GD.Print("MaskManager initialized with " + maskDetails.Count + " MaskDetails.");
+    }
+
+    public void HideGuestSprite()
+    {
+        guestSprite.Visible = false;
+    }
+
+    public void ShowGuestSprite()
+    {
+        guestSprite.Visible = true;
     }
 
     public List<MaskDetail> GetMaskDetails()
