@@ -28,7 +28,7 @@ public partial class LevelManager : Node
     private float scaleBig = 1.0f;
     private int health = 3;
 
-    public override void _Ready()
+    public override async void _Ready()
     {
         referenceMask = GetNode<MaskManager>("Guest/Mask");
         if (referenceMask == null)
@@ -54,8 +54,15 @@ public partial class LevelManager : Node
         referenceMask.HideGuestSprite();
         referenceMask.GenerateReferenceMask();
         maskDifferences = new bool[referenceMask.maskDetails.Count];
+        CallDeferred(nameof(StartLevel));
+    }
+
+    private async void StartLevel()
+    {
+        await FadeFromBlack();
         _ = RunGuestCycle();
     }
+
 
     private async System.Threading.Tasks.Task RunGuestCycle()
     {
@@ -90,9 +97,16 @@ public partial class LevelManager : Node
 
             submitPressed = false;
             while (maskDifferences.Any(x => x) || !submitPressed)
-                await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+            {
+                if (health <= 0)
+                {
+                    await FadeAndSwitchScene("Level2.tscn");
+                    return;
+                }
 
-            GD.Print(maskDifferences.ToString());
+                await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+            }
+
 
             cameraController.BlockInput = true;
             cameraController.MoveUp();
@@ -112,6 +126,18 @@ public partial class LevelManager : Node
             guestMask.HideMask();
             guestsProcessed++;
             EmitSignal("GuestProcessed", guestsProcessed);
+        }
+
+        switch (Name)
+        {
+            case "Level1":
+                GetTree().ChangeSceneToFile("res://Level3.tscn");
+                break;
+            case "Level2":
+                GetTree().ChangeSceneToFile("res://StartMenu.tscn");
+                break;
+            default:
+                break;
         }
     }
 
@@ -134,6 +160,40 @@ public partial class LevelManager : Node
             maskDifferences[i] = referenceData[i] != guestData[i];
         }
     }
+
+    private async System.Threading.Tasks.Task FadeAndSwitchScene(string scenePath)
+    {
+        ColorRect fade = new ColorRect();
+        AddChild(fade);
+        fade.Size = new Vector2(screenSize.X, screenSize.Y * 3);
+        fade.Color = new Color(0, 0, 0, 0);
+        fade.ZIndex = 100;
+
+        Tween tween = CreateTween();
+        tween.TweenProperty(fade, "color:a", 1.0f, 1.0f);
+        await ToSignal(tween, Tween.SignalName.Finished);
+
+        if (string.IsNullOrEmpty(scenePath))
+            GetTree().ReloadCurrentScene();
+        else
+            GetTree().ChangeSceneToFile(scenePath);
+    }
+
+    private async System.Threading.Tasks.Task FadeFromBlack()
+    {
+        ColorRect fade = new ColorRect();
+        AddChild(fade);
+        fade.Size = new Vector2(screenSize.X, screenSize.Y * 3);
+        fade.Color = new Color(0, 0, 0, 1);
+        fade.ZIndex = 100;
+
+        Tween tween = CreateTween();
+        tween.TweenProperty(fade, "color:a", 0.0f, 1.0f);
+        await ToSignal(tween, Tween.SignalName.Finished);
+
+        fade.QueueFree();
+    }
+
 
     public bool[] DifferenceSubmitted(bool[] selectedDetails)
     {
