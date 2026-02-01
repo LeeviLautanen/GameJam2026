@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://40821jecs6kb"]
 
-[ext_resource type="Script" path="res://Scripts/ClipboardManager.cs" id="1_8mrap"]
+[ext_resource type="Script" uid="uid://s8kvvq83dobk" path="res://Scripts/ClipboardManager.cs" id="1_8mrap"]
 [ext_resource type="Script" uid="uid://djl160yyngc3v" path="res://Scripts/LevelManager.cs" id="1_fmt3s"]
 [ext_resource type="Texture2D" uid="uid://c6pigv7j5cn8s" path="res://Art/halfMasks/half_mask_type_1/base/half_mask_base_blue.png" id="2_psxy2"]
 [ext_resource type="PackedScene" uid="uid://5dtgpw4gym5p" path="res://GuestScene.tscn" id="3_c8kak"]
@@ -126,17 +126,15 @@ label_settings = SubResource("LabelSettings_j286a")
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -6.263158
-anchor_top = -2.4210527
-anchor_right = -6.601504
-anchor_bottom = -2.2280703
+anchor_left = -6.6090226
+anchor_top = -2.5789473
+anchor_right = -6.9473686
+anchor_bottom = -2.3859649
 offset_left = 964.0
 offset_top = 363.0
 offset_right = 1051.0
 offset_bottom = 394.0
 scale = Vector2(2, 2)
-tooltip_text = "Submit
-"
 icon = ExtResource("4_e7r37")
 flat = true
 metadata/_edit_use_anchors_ = true
