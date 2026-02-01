@@ -21,6 +21,7 @@ scale = Vector2(2.5401785, 2.395)
 texture = ExtResource("1_ufv5y")
 
 [node name="StartButton" type="Button" parent="StartMenuBackground" unique_id=1528746551]
+texture_filter = 1
 offset_left = -64.71002
 offset_top = -28.810034
 offset_right = 93.28998
@@ -29,6 +30,7 @@ icon = ExtResource("2_0d5ky")
 flat = true
 
 [node name="QuitButton" type="Button" parent="StartMenuBackground" unique_id=273962789]
+texture_filter = 1
 offset_left = -65.1037
 offset_top = 19.62421
 offset_right = 92.8963
@@ -37,6 +39,7 @@ icon = ExtResource("3_7htnq")
 flat = true
 
 [node name="Label" type="Label" parent="StartMenuBackground" unique_id=361554143]
+texture_filter = 1
 offset_left = -65.891045
 offset_top = -71.8163
 offset_right = 65.108955
