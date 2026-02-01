@@ -1,5 +1,10 @@
 [gd_scene format=3 uid="uid://bpa7y2vdscwhj"]
 
+[ext_resource type="Script" uid="uid://iw1n0tgriwp6" path="res://Scripts/StartMenu.cs" id="1_7htnq"]
+[ext_resource type="Texture2D" uid="uid://ouqi76ggswma" path="res://Art/ui/start_menu_background.png" id="1_ufv5y"]
+[ext_resource type="Texture2D" uid="uid://xrhubux80aby" path="res://Art/ui/start_button.png" id="2_0d5ky"]
+[ext_resource type="Texture2D" uid="uid://d2x74oqap7sc6" path="res://Art/ui/quit_button.png" id="3_7htnq"]
+
 [node name="StartMenu" type="Control" unique_id=520456127]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +12,39 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7htnq")
+
+[node name="StartMenuBackground" type="Sprite2D" parent="." unique_id=922065053]
+texture_repeat = 2
+position = Vector2(455.375, 328.00003)
+scale = Vector2(2.5401785, 2.395)
+texture = ExtResource("1_ufv5y")
+
+[node name="StartButton" type="Button" parent="StartMenuBackground" unique_id=1528746551]
+offset_left = -64.71002
+offset_top = -28.810034
+offset_right = 93.28998
+offset_bottom = 9.189966
+icon = ExtResource("2_0d5ky")
+flat = true
+
+[node name="QuitButton" type="Button" parent="StartMenuBackground" unique_id=273962789]
+offset_left = -65.1037
+offset_top = 19.62421
+offset_right = 92.8963
+offset_bottom = 57.62421
+icon = ExtResource("3_7htnq")
+flat = true
+
+[node name="Label" type="Label" parent="StartMenuBackground" unique_id=361554143]
+offset_left = -65.891045
+offset_top = -71.8163
+offset_right = 65.108955
+offset_bottom = -43.8163
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Mask Check!"
+uppercase = true
+
+[connection signal="pressed" from="StartMenuBackground/StartButton" to="." method="OnStartButtonPressed"]
+[connection signal="pressed" from="StartMenuBackground/QuitButton" to="." method="OnQuitButtonPressed"]
