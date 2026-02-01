@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://40821jecs6kb"]
 
-[ext_resource type="Script" uid="uid://s8kvvq83dobk" path="res://Scripts/ClipboardManager.cs" id="1_8mrap"]
+[ext_resource type="Script" path="res://Scripts/ClipboardManager.cs" id="1_8mrap"]
 [ext_resource type="Script" uid="uid://djl160yyngc3v" path="res://Scripts/LevelManager.cs" id="1_fmt3s"]
 [ext_resource type="Texture2D" uid="uid://c6pigv7j5cn8s" path="res://Art/halfMasks/half_mask_type_1/base/half_mask_base_blue.png" id="2_psxy2"]
 [ext_resource type="PackedScene" uid="uid://5dtgpw4gym5p" path="res://GuestScene.tscn" id="3_c8kak"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ba2qru0rhr8qx" path="res://Art/ui/submit_button.png" id="4_e7r37"]
 [ext_resource type="Texture2D" uid="uid://b4o8a748vhei4" path="res://Art/ui/clipboard_page_turn_button.png" id="4_gme1u"]
 [ext_resource type="Texture2D" uid="uid://dqjyv1trl43lt" path="res://Art/ui/x_red.png" id="4_j286a"]
-[ext_resource type="PackedScene" uid="uid://di82624yy33wl" path="res://ClipboardCheckbox.tscn" id="4_q3blq"]
+[ext_resource type="PackedScene" uid="uid://dvi3e11hrdan8" path="res://ClipboardCheckbox.tscn" id="4_q3blq"]
 [ext_resource type="Texture2D" uid="uid://b8werx8htkc7v" path="res://Art/halfMasks/half_mask_type_1/feathers blue/half_mask_base_blue_feathers.png" id="4_wwdpc"]
 [ext_resource type="Texture2D" uid="uid://c5em27h2xfico" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_blue_gem.png" id="5_6faey"]
 [ext_resource type="Script" uid="uid://bi6f3qds5qlhr" path="res://Scripts/MaskDetail.cs" id="5_nc7oo"]
@@ -46,6 +46,13 @@
 [ext_resource type="Script" uid="uid://b7ksbw1l0vg8g" path="res://Scripts/CameraController.cs" id="39_ytr4e"]
 [ext_resource type="Texture2D" uid="uid://bt303vcmgkui2" path="res://Art/ui/x_white.png" id="44_f7eu1"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_j286a"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fi16w"]
+font_size = 10
+font_color = Color(0, 0, 0, 1)
+
 [node name="Level2" type="Node2D" unique_id=930230761]
 script = ExtResource("1_fmt3s")
 NumberOfGuests = 10
@@ -56,38 +63,38 @@ script = ExtResource("39_ytr4e")
 
 [node name="XWhite3" type="Sprite2D" parent="Camera2D" unique_id=798634748]
 texture_filter = 1
-position = Vector2(1124.1072, 26.107151)
-scale = Vector2(-1.404286, -1.404286)
+position = Vector2(1105.4626, 35.462654)
+scale = Vector2(-2.5785062, -2.5785062)
 texture = ExtResource("44_f7eu1")
 
 [node name="XWhite2" type="Sprite2D" parent="Camera2D" unique_id=1532874694]
 texture_filter = 1
-position = Vector2(1085.1072, 26.107151)
-scale = Vector2(-1.404286, -1.404286)
+position = Vector2(1025.4626, 35.462654)
+scale = Vector2(-2.5785062, -2.5785062)
 texture = ExtResource("44_f7eu1")
 
 [node name="XWhite" type="Sprite2D" parent="Camera2D" unique_id=1722784520]
 texture_filter = 1
-position = Vector2(1045.1072, 26.107151)
-scale = Vector2(-1.404286, -1.404286)
+position = Vector2(944.46265, 35.462654)
+scale = Vector2(-2.5785062, -2.5785062)
 texture = ExtResource("44_f7eu1")
 
 [node name="XRed" type="Sprite2D" parent="Camera2D" unique_id=1571214960]
 texture_filter = 1
-position = Vector2(1045.1072, 26.107151)
-scale = Vector2(-1.404286, -1.404286)
+position = Vector2(944.46265, 35.462654)
+scale = Vector2(-2.5785062, -2.5785062)
 texture = ExtResource("4_j286a")
 
 [node name="XRed2" type="Sprite2D" parent="Camera2D" unique_id=1702368676]
 texture_filter = 1
-position = Vector2(1085.1072, 26.107151)
-scale = Vector2(-1.404286, -1.404286)
+position = Vector2(1025.4626, 35.462654)
+scale = Vector2(-2.5785062, -2.5785062)
 texture = ExtResource("4_j286a")
 
 [node name="XRed3" type="Sprite2D" parent="Camera2D" unique_id=1787583200]
 texture_filter = 1
-position = Vector2(1124.1072, 26.107151)
-scale = Vector2(-1.404286, -1.404286)
+position = Vector2(1105.4626, 35.462654)
+scale = Vector2(-2.5785062, -2.5785062)
 texture = ExtResource("4_j286a")
 
 [node name="Control" type="Control" parent="." unique_id=1137502596]
@@ -103,19 +110,25 @@ metadata/_edit_use_anchors_ = true
 
 [node name="DifferenceList" type="VBoxContainer" parent="Control" unique_id=1199266005]
 layout_mode = 0
-offset_left = 30.0
-offset_top = -22.0
-offset_right = 234.0
-offset_bottom = 249.58899
+offset_left = 42.0
+offset_top = -82.0
+offset_right = 222.0
+offset_bottom = 189.58899
+
+[node name="Label" type="Label" parent="Control/DifferenceList" unique_id=812450743]
+texture_filter = 1
+layout_mode = 2
+text = "Select discrepancies:"
+label_settings = SubResource("LabelSettings_j286a")
 
 [node name="Submit" type="Button" parent="Control" unique_id=1902225099]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -6.9097743
-anchor_top = -2.491228
-anchor_right = -6.9097743
-anchor_bottom = -2.2982457
+anchor_left = -6.263158
+anchor_top = -2.4210527
+anchor_right = -6.601504
+anchor_bottom = -2.2280703
 offset_left = 964.0
 offset_top = 363.0
 offset_right = 1051.0
@@ -126,6 +139,16 @@ tooltip_text = "Submit
 icon = ExtResource("4_e7r37")
 flat = true
 metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control/Submit" unique_id=1848583435]
+texture_filter = 1
+layout_mode = 0
+offset_left = 2.0
+offset_top = 37.0
+offset_right = 57.0
+offset_bottom = 60.0
+text = "Submit"
+label_settings = SubResource("LabelSettings_fi16w")
 
 [node name="ClipboardWithHand" type="Sprite2D" parent="Control" unique_id=772532831]
 z_index = -1
