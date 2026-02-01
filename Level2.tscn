@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://l0hcpvo2pnlb" path="res://Scripts/MaskManager.cs" id="3_wwdpc"]
 [ext_resource type="Texture2D" uid="uid://ba2qru0rhr8qx" path="res://Art/ui/submit_button.png" id="4_e7r37"]
 [ext_resource type="Texture2D" uid="uid://b4o8a748vhei4" path="res://Art/ui/clipboard_page_turn_button.png" id="4_gme1u"]
+[ext_resource type="Texture2D" uid="uid://dqjyv1trl43lt" path="res://Art/ui/x_red.png" id="4_j286a"]
 [ext_resource type="PackedScene" uid="uid://di82624yy33wl" path="res://ClipboardCheckbox.tscn" id="4_q3blq"]
 [ext_resource type="Texture2D" uid="uid://b8werx8htkc7v" path="res://Art/halfMasks/half_mask_type_1/feathers blue/half_mask_base_blue_feathers.png" id="4_wwdpc"]
 [ext_resource type="Texture2D" uid="uid://c5em27h2xfico" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_blue_gem.png" id="5_6faey"]
@@ -43,13 +44,51 @@
 [ext_resource type="Texture2D" uid="uid://caogppfdqpvf7" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_pink_gem.png" id="34_ckv4c"]
 [ext_resource type="Texture2D" uid="uid://brn8vnyk0efqj" path="res://Art/halfMasks/half_mask_type_1/gems/half_mask_base_pink_gems.png" id="35_spmjc"]
 [ext_resource type="Script" uid="uid://b7ksbw1l0vg8g" path="res://Scripts/CameraController.cs" id="39_ytr4e"]
+[ext_resource type="Texture2D" uid="uid://bt303vcmgkui2" path="res://Art/ui/x_white.png" id="44_f7eu1"]
 
 [node name="Level2" type="Node2D" unique_id=930230761]
 script = ExtResource("1_fmt3s")
+NumberOfGuests = 10
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=866947176]
 anchor_mode = 0
 script = ExtResource("39_ytr4e")
+
+[node name="XWhite3" type="Sprite2D" parent="Camera2D" unique_id=798634748]
+texture_filter = 1
+position = Vector2(1124.1072, 26.107151)
+scale = Vector2(-1.404286, -1.404286)
+texture = ExtResource("44_f7eu1")
+
+[node name="XWhite2" type="Sprite2D" parent="Camera2D" unique_id=1532874694]
+texture_filter = 1
+position = Vector2(1085.1072, 26.107151)
+scale = Vector2(-1.404286, -1.404286)
+texture = ExtResource("44_f7eu1")
+
+[node name="XWhite" type="Sprite2D" parent="Camera2D" unique_id=1722784520]
+texture_filter = 1
+position = Vector2(1045.1072, 26.107151)
+scale = Vector2(-1.404286, -1.404286)
+texture = ExtResource("44_f7eu1")
+
+[node name="XRed" type="Sprite2D" parent="Camera2D" unique_id=1571214960]
+texture_filter = 1
+position = Vector2(1045.1072, 26.107151)
+scale = Vector2(-1.404286, -1.404286)
+texture = ExtResource("4_j286a")
+
+[node name="XRed2" type="Sprite2D" parent="Camera2D" unique_id=1702368676]
+texture_filter = 1
+position = Vector2(1085.1072, 26.107151)
+scale = Vector2(-1.404286, -1.404286)
+texture = ExtResource("4_j286a")
+
+[node name="XRed3" type="Sprite2D" parent="Camera2D" unique_id=1787583200]
+texture_filter = 1
+position = Vector2(1124.1072, 26.107151)
+scale = Vector2(-1.404286, -1.404286)
+texture = ExtResource("4_j286a")
 
 [node name="Control" type="Control" parent="." unique_id=1137502596]
 layout_mode = 3

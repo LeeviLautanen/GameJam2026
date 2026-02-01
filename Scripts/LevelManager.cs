@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public partial class LevelManager : Node
 {
@@ -25,6 +26,7 @@ public partial class LevelManager : Node
     private float guestZoomSpeed = 0.5f;
     private float scaleSmall = 0.7f;
     private float scaleBig = 1.0f;
+    private int health = 3;
 
     public override void _Ready()
     {
@@ -42,6 +44,7 @@ public partial class LevelManager : Node
             return;
         }
 
+        cameraController.SetHealth(health);
         screenSize = (Vector2I)GetViewport().GetVisibleRect().Size;
 
         guestStartLocation = new Vector2(0 - 300, screenSize.Y);
@@ -86,8 +89,10 @@ public partial class LevelManager : Node
             cameraController.BlockInput = false;
 
             submitPressed = false;
-            while (Array.Exists(maskDifferences, x => x) || !submitPressed)
+            while (maskDifferences.Any(x => x) || !submitPressed)
                 await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+
+            GD.Print(maskDifferences.ToString());
 
             cameraController.BlockInput = true;
             cameraController.MoveUp();
@@ -147,13 +152,42 @@ public partial class LevelManager : Node
             if ((maskDifferences[i] && selectedDetails[i]) || (!maskDifferences[i] && !selectedDetails[i]))
             {
                 correctAnswers[i] = true;
-                maskDifferences[i] = false;
+                //maskDifferences[i] = false;
             }
             else
             {
                 correctAnswers[i] = false;
             }
         }
+
+        if (selectedDetails.All(x => x == false) && maskDifferences.Any(x => x))
+        {
+            GD.Print("No differences selected but differences exist.");
+            health--;
+            cameraController.SetHealth(health);
+            return correctAnswers;
+        }
+
+        for (int i = 0; i < maskDifferences.Length; i++)
+        {
+            if (!correctAnswers[i] && selectedDetails[i])
+            {
+                GD.Print("Some selected answers were incorrect.");
+                health--;
+                cameraController.SetHealth(health);
+                return correctAnswers;
+            }
+        }
+
+        for (int i = 0; i < maskDifferences.Length; i++)
+        {
+            if (correctAnswers[i] && selectedDetails[i])
+            {
+                GD.Print("Correct answer cleared at " + i);
+                maskDifferences[i] = false;
+            }
+        }
+
         return correctAnswers;
     }
 }

@@ -33,14 +33,14 @@ public partial class ClipboardCheckBox : HBoxContainer
 
 	public void Mark()
 	{
-		GD.Print("Marking checkbox");
+		//GD.Print("Marking checkbox");
 		checkboxSprite.Play("fill");
 		Checked = true;
 	}
 
 	public void Unmark()
 	{
-		GD.Print("Unmarking checkbox");
+		//GD.Print("Unmarking checkbox");
 		checkboxSprite.PlayBackwards("fill");
 		Checked = false;
 	}

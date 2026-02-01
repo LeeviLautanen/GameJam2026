@@ -11,6 +11,9 @@ public partial class CameraController : Camera2D
     private Vector2 upPosition;
     private Vector2 downPosition;
     private bool isMoving = false;
+    private Sprite2D red1;
+    private Sprite2D red2;
+    private Sprite2D red3;
 
     public override void _Ready()
     {
@@ -20,6 +23,10 @@ public partial class CameraController : Camera2D
         downPosition = new(0, screenSize.Y);
 
         GlobalPosition = upPosition;
+
+        red1 = GetNode<Sprite2D>("XRed");
+        red2 = GetNode<Sprite2D>("XRed2");
+        red3 = GetNode<Sprite2D>("XRed3");
     }
 
     public override void _Process(double delta)
@@ -30,6 +37,35 @@ public partial class CameraController : Camera2D
             MoveDown();
         else if (Input.IsActionJustPressed("MoveUp"))
             MoveUp();
+    }
+
+    public void SetHealth(int health)
+    {
+        switch (health)
+        {
+            case 3:
+                red1.Visible = false;
+                red2.Visible = false;
+                red3.Visible = false;
+                break;
+            case 2:
+                red1.Visible = true;
+                red2.Visible = false;
+                red3.Visible = false;
+                break;
+            case 1:
+                red1.Visible = true;
+                red2.Visible = true;
+                red3.Visible = false;
+                break;
+            case 0:
+                red1.Visible = true;
+                red2.Visible = true;
+                red3.Visible = true;
+                break;
+            default:
+                break;
+        }
     }
 
     public void MoveUp()

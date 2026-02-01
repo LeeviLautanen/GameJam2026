@@ -9,6 +9,7 @@ public partial class ClipboardManager : Control
 
     private MaskManager maskManager;
     private LevelManager levelManager;
+    private CameraController cameraController;
     private List<ClipboardCheckBox> checkBoxes;
     private VBoxContainer diffList;
 
@@ -78,7 +79,6 @@ public partial class ClipboardManager : Control
         {
             if (!correctAnswers[i] && selectedDetails[i])
             {
-                GD.Print("Some selected answers were incorrect.");
                 foreach (var checkbox in checkBoxes)
                 {
                     if (checkbox.Checked && !checkbox.Disabled) checkbox.Unmark();
@@ -91,6 +91,7 @@ public partial class ClipboardManager : Control
         {
             if (correctAnswers[i] && selectedDetails[i])
             {
+                checkBoxes[i].Checked = false;
                 checkBoxes[i].Disabled = true;
             }
         }
